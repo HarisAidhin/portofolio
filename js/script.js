@@ -155,6 +155,12 @@ const certificates = [
         type: 'national',
         image: 'Sertifikat/serti27.jpg',
         link:'https://pdki.cloud/s/xrZMYojieSts9Me'
+    },
+
+    {
+        title: 'PU CSIRT',
+        type: 'national',
+        image: 'Sertifikat/serti28.jpg'
     }
 ];
 
