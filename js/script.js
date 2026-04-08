@@ -161,6 +161,12 @@ const certificates = [
         title: 'PU CSIRT',
         type: 'national',
         image: 'Sertifikat/serti28.jpg'
+    },
+
+    {
+        title: 'PUTI Security (TelkomUniversity)',
+        type: 'national',
+        image: 'Sertifikat/serti29.jpg'
     }
 ];
 
