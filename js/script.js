@@ -74,12 +74,12 @@ const certificates = [
     {
         title: 'Avans Hogeschool',
         type: 'international',
-        image: 'Sertifikat/Loa.jpg'
+        image: 'Sertifikat/serti30.jpg'
     },
     {
         title: 'Avans Hogeschool',
         type: 'international',
-        image: 'Sertifikat/Loa2.jpg'
+        image: 'Sertifikat/serti31.jpg'
     },
     {
         title: 'Diskominfo DIY',
@@ -124,6 +124,15 @@ const certificates = [
         type: 'national',
         image: 'Sertifikat/serti21.jpg'
     },
+
+    {
+        title: 'PT. JULO',
+        type: 'national',
+        image: 'Sertifikat/serti32.jpg'
+    },
+
+
+    
     {
         title: 'Politeknik Siber Cerdika International',
         type: 'national',
