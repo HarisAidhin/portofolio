@@ -181,6 +181,12 @@ const certificates = [
         title: 'PUTI Security (TelkomUniversity)',
         type: 'national',
         image: 'Sertifikat/serti33.jpg'
+    },
+
+    {
+        title: 'Kartika CSIRT Pussiberad',
+        type: 'national',
+        image: 'Sertifikat/serti34.jpg'
     }
 ];
 
