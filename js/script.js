@@ -260,7 +260,6 @@ document.querySelectorAll('.nav-link').forEach(link => {
 const typewriterText = document.querySelector('.typewriter-text');
 if (typewriterText) {
     const texts = [
-        'Security Researcher',
         'Penetration Tester',
         'Bug Hunter'
     ];
