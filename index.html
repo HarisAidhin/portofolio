@@ -17,8 +17,8 @@
         <div class="container">
             <div class="nav-container">
                 <div class="logo">
-                    <i class="fas fa-shield-alt"></i>
-                    <span>HA<span class="logo-accent">R</span></span>
+                  
+<span>H<span class="logo-accent">R</span></span>
                 </div>
                 <ul class="nav-menu">
                     <li class="nav-item"><a href="#about" class="nav-link">Tentang</a></li>
@@ -193,62 +193,124 @@
         </div>
     </section>
 
-    <!-- Bounty Section -->
-    <section id="bounty" class="section">
-        <div class="container">
-            <h2 class="section-title"><span class="section-title-number">04.</span> Program Bounty</h2>
-            <div class="bounty-content">
-                <div class="bounty-intro">
-                    <p>Alhamdulillah saya mendapatkan reward dari beberapa program bug bounty. Berikut adalah salah satu pencapaian saya:</p>
+<!-- Bounty Section -->
+<section id="bounty" class="section">
+    <div class="container">
+        <h2 class="section-title">
+            <span class="section-title-number">04.</span> Program Bounty
+        </h2>
+        
+        <div class="bounty-intro fade-in">
+            <p>Alhamdulillah, saya mendapatkan reward dari beberapa program bug bounty. Berikut adalah pencapaian saya:</p>
+        </div>
+        
+        <!-- Bounty Item 1 - Detik.com -->
+        <div class="bounty-item fade-in">
+            <div class="bounty-header">
+                <div class="bounty-company">
+                    <div class="company-icon">
+                        <i class="fas fa-newspaper"></i>
+                    </div>
+                    <div class="company-details">
+                        <h3>Detik.com</h3>
+                        <span class="bounty-year">2025</span>
+                    </div>
                 </div>
-                <div class="bounty-item fade-in">
-                    <div class="bounty-company">
-                        <div class="company-logo">
-                            <i class="fas fa-newspaper"></i>
+            </div>
+            
+            <div class="bounty-body">
+                <div class="bounty-description">
+                    <p>Saya menemukan kerentanan <strong>Open Redirect</strong> pada domain detik.com yang dapat dimanfaatkan untuk phishing attack.</p>
+                    
+                    <div class="reward-checklist">
+                        <div class="checklist-item">
+                            <i class="fas fa-certificate checked"></i>
+                            <span>Sertifikat Penghargaan</span>
                         </div>
-                        <div class="company-info">
-                            <h3>Detik.com</h3>
-                            <span class="bounty-date">2025</span>
+                        <div class="checklist-item">
+                            <i class="fas fa-tshirt checked"></i>
+                            <span>Kaos Exclusive</span>
+                        </div>
+                        <div class="checklist-item">
+                            <i class="fas fa-mug-hot checked"></i>
+                            <span>Tumbler</span>
                         </div>
                     </div>
-                    <div class="bounty-details">
-                        <p>Saya menemukan kerentanan <strong>Open Redirect</strong> pada domain detik.com yang dapat dimanfaatkan untuk phishing attack.</p>
-                        <div class="bounty-rewards">
-                            <span class="reward-item"><i class="fas fa-certificate"></i> Sertifikat Penghargaan</span>
-                            <span class="reward-item"><i class="fas fa-tshirt"></i> Kaos Exclusive</span>
-                            <span class="reward-item"><i class="fas fa-mug-hot"></i> Tumbler</span>
-                        </div>
-                    </div>
-                    <div class="bounty-proof">
-                        <img src="Imagewriteup/Ss_bountydetikcom.jpg" alt="Bukti Bounty Detik.com" class="bounty-image">
+                </div>
+                
+                <div class="bounty-image-container">
+                    <img src="Imagewriteup/Ss_bountydetikcom.jpg" 
+                         alt="Bukti Bounty Detik.com" 
+                         class="bounty-image"
+                         onclick="openBountyModal(this.src, 'Detik.com - Open Redirect Vulnerability')">
+                    <div class="image-hint" onclick="openBountyModal(this.parentElement.querySelector('img').src, 'Detik.com - Open Redirect Vulnerability')">
+                        <i class="fas fa-search-plus"></i>
+                        <span>Klik untuk perbesar</span>
                     </div>
                 </div>
             </div>
         </div>
-
+        
+        <!-- Bounty Item 2 - UT Austin -->
         <div class="bounty-item fade-in">
-                    <div class="bounty-company">
-                        <div class="company-logo">
-                            <i class="fas fa-university"></i>
-                        </div>
-                        <div class="company-info">
-                            <h3>University of Texas at Austin</h3>
-                            <span class="bounty-date">2026</span>
-                        </div>
+            <div class="bounty-header">
+                <div class="bounty-company">
+                    <div class="company-icon">
+                        <i class="fas fa-university"></i>
                     </div>
-                    <div class="bounty-details">
-                        <p>Saya menemukan dua kerentanan <strong>Information Disclosure</strong> yang memungkinkan akses ke data sensitif pada infrastruktur universitas.</p>
-                        <div class="bounty-rewards">
-                            <span class="reward-item"><i class="fas fa-coins"></i> UT ISO Challenge Coin</span>
-                            <span class="reward-item"><i class="fas fa-envelope-open-text"></i> Thanks Letter (Handwritten)</span>
-                            <span class="reward-item"><i class="fas fa-sticky-note"></i> Exclusive Stickers</span>
-                        </div>
-                    </div>
-                    <div class="bounty-proof">
-                        <img src="Imagewriteup/Ss_bountyutexasedu.jpg" alt="Bukti Bounty UT Austin" class="bounty-image">
+                    <div class="company-details">
+                        <h3>University of Texas at Austin</h3>
+                        <span class="bounty-year">2026</span>
                     </div>
                 </div>
-    </section>
+            </div>
+            
+            <div class="bounty-body">
+                <div class="bounty-description">
+                    <p>Saya menemukan <strong>dua kerentanan Information Disclosure</strong> yang memungkinkan akses ke data sensitif pada infrastruktur universitas.</p>
+                    
+                    <div class="reward-checklist">
+                        <div class="checklist-item">
+                            <i class="fas fa-coins checked"></i>
+                            <span>UT ISO Challenge Coin</span>
+                        </div>
+                        <div class="checklist-item">
+                            <i class="fas fa-envelope-open-text checked"></i>
+                            <span>Thanks Letter (Handwritten)</span>
+                        </div>
+                        <div class="checklist-item">
+                            <i class="fas fa-sticky-note checked"></i>
+                            <span>Exclusive Stickers</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bounty-image-container">
+                    <img src="Imagewriteup/Ss_bountyutexasedu.jpg" 
+                         alt="Bukti Bounty UT Austin" 
+                         class="bounty-image"
+                         onclick="openBountyModal(this.src, 'UT Austin - Information Disclosure Vulnerability')">
+                    <div class="image-hint" onclick="openBountyModal(this.parentElement.querySelector('img').src, 'UT Austin - Information Disclosure Vulnerability')">
+                        <i class="fas fa-search-plus"></i>
+                        <span>Klik untuk perbesar</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Modal Lightbox -->
+<div id="bountyModal" class="bounty-modal">
+    <div class="modal-overlay" onclick="closeBountyModal()"></div>
+    <div class="modal-container">
+        <button class="modal-close-btn" onclick="closeBountyModal()">
+            <i class="fas fa-times"></i>
+        </button>
+        <img class="modal-image" id="modalImage" src="" alt="Preview">
+        <p class="modal-caption" id="modalCaption"></p>
+    </div>
+</div>
 
     <!-- Hall of Fame Section -->
     <section id="hall-of-fame" class="section">

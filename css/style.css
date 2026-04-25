@@ -731,97 +731,403 @@ img {
 .certificates-note strong { color: var(--accent); }
 
 /* === BOUNTY === */
+/* Bounty Section Styles */
+#bounty {
+    padding: 80px 0;
+}
+
 .bounty-intro {
-    margin-bottom: 32px;
-    color: var(--text-2);
-    font-size: 0.95rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 1rem;
+    background: linear-gradient(135deg, rgba(100, 255, 218, 0.08), rgba(100, 255, 218, 0.02));
+    border-radius: 12px;
+    border-left: 4px solid #64ffda;
 }
 
+.bounty-intro p {
+    font-size: 1.1rem;
+    color: #8892b0;
+    margin: 0;
+}
+
+/* Bounty Item Card */
 .bounty-item {
-    display: grid;
-    grid-template-columns: auto 1fr auto;
-    gap: 32px;
-    align-items: start;
-    background: var(--bg-2);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-lg);
-    padding: 32px;
-    transition: border-color var(--transition);
+    background: rgba(10, 25, 47, 0.7);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    margin-bottom: 2rem;
+    overflow: hidden;
+    border: 1px solid rgba(100, 255, 218, 0.1);
+    transition: all 0.3s ease;
 }
 
-.bounty-item:hover { border-color: var(--border-2); }
+.bounty-item:hover {
+    transform: translateY(-4px);
+    border-color: rgba(100, 255, 218, 0.3);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Bounty Header */
+.bounty-header {
+    padding: 1.2rem 1.5rem;
+    border-bottom: 1px solid rgba(100, 255, 218, 0.1);
+    background: rgba(100, 255, 218, 0.03);
+}
 
 .bounty-company {
     display: flex;
     align-items: center;
-    gap: 14px;
+    gap: 1rem;
 }
 
-.company-logo {
-    width: 48px;
-    height: 48px;
-    background: var(--accent-dim);
-    border: 1px solid rgba(0,229,176,0.2);
-    border-radius: var(--radius);
+.company-icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #64ffda, #00b4d8);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: #0a192f;
+}
+
+.company-details h3 {
+    font-size: 1.2rem;
+    margin: 0 0 5px 0;
+    color: #ccd6f6;
+}
+
+.bounty-year {
+    display: inline-block;
+    padding: 2px 10px;
+    background: rgba(100, 255, 218, 0.1);
+    border-radius: 20px;
+    font-size: 0.75rem;
+    color: #64ffda;
+    border: 1px solid rgba(100, 255, 218, 0.2);
+}
+
+/* Bounty Body */
+.bounty-body {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1.5rem;
+    gap: 1.5rem;
+}
+
+.bounty-description {
+    flex: 1;
+    min-width: 250px;
+}
+
+.bounty-description p {
+    color: #8892b0;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+}
+
+.bounty-description strong {
+    color: #64ffda;
+}
+
+/* Reward Checklist - icon tetap asli (certificate, tshirt, mug, coin, dll) */
+.reward-checklist {
+    margin-top: 1rem;
+}
+
+.checklist-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 0;
+    color: #ccd6f6;
+    font-size: 0.9rem;
+    border-bottom: 1px dashed rgba(100, 255, 218, 0.1);
+}
+
+.checklist-item i {
+    font-size: 1.1rem;
+    width: 24px;
+    color: #64ffda;  /* Warna icon tetap hijau kebiruan */
+}
+
+.checklist-item:last-child {
+    border-bottom: none;
+}
+
+/* Image Container */
+.bounty-image-container {
+    flex-shrink: 0;
+    width: 280px;
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    background: #0a192f;
+    border: 1px solid rgba(100, 255, 218, 0.15);
+    transition: all 0.3s ease;
+}
+
+.bounty-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.bounty-image-container:hover .bounty-image {
+    transform: scale(1.05);
+}
+
+.image-hint {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    padding: 12px;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    cursor: pointer;
+}
+
+.image-hint i {
+    color: #64ffda;
+    font-size: 0.9rem;
+}
+
+.image-hint span {
+    color: white;
+    font-size: 0.75rem;
+    margin-left: 5px;
+}
+
+.bounty-image-container:hover .image-hint {
+    opacity: 1;
+}
+
+/* Modal Lightbox */
+.bounty-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+    animation: modalFadeIn 0.3s ease;
+}
+
+.bounty-modal.active {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.company-logo i { color: var(--accent); font-size: 1.1rem; }
-
-.company-info h3 {
-    font-size: 1.05rem;
-    font-weight: 700;
-    color: var(--white);
-    letter-spacing: -0.01em;
-}
-
-.bounty-date {
-    font-family: var(--font-mono);
-    font-size: 0.75rem;
-    color: var(--text-3);
-}
-
-.bounty-details p {
-    color: var(--text-2);
-    margin-bottom: 16px;
-    line-height: 1.8;
-}
-
-.bounty-details strong { color: var(--white); }
-
-.bounty-rewards {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-}
-
-.reward-item {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    font-family: var(--font-mono);
-    font-size: 0.75rem;
-    color: var(--text-2);
-    background: var(--bg-3);
-    border: 1px solid var(--border);
-    padding: 6px 12px;
-    border-radius: 20px;
-}
-
-.reward-item i { color: var(--accent); font-size: 0.7rem; }
-
-.bounty-proof {
-    width: 240px;
-    flex-shrink: 0;
-}
-
-.bounty-image {
+.modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    border-radius: var(--radius);
-    border: 1px solid var(--border);
-    object-fit: cover;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+}
+
+.modal-container {
+    position: relative;
+    max-width: 90vw;
+    max-height: 90vh;
+    z-index: 10001;
+    animation: modalZoomIn 0.3s ease;
+}
+
+.modal-close-btn {
+    position: absolute;
+    top: -50px;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-close-btn:hover {
+    background: #64ffda;
+    color: #0a192f;
+    transform: rotate(90deg);
+}
+
+.modal-image {
+    max-width: 90vw;
+    max-height: 80vh;
+    object-fit: contain;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+.modal-caption {
+    text-align: center;
+    margin-top: 1rem;
+    color: #64ffda;
+    font-size: 0.9rem;
+}
+
+/* Animations */
+@keyframes modalFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes modalZoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #bounty {
+        padding: 50px 0;
+    }
+    
+    .bounty-header {
+        padding: 1rem;
+    }
+    
+    .company-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+    
+    .company-details h3 {
+        font-size: 1rem;
+    }
+    
+    .bounty-body {
+        flex-direction: column;
+        padding: 1rem;
+        gap: 1rem;
+    }
+    
+    .bounty-description {
+        order: 2;
+    }
+    
+    .bounty-description p {
+        font-size: 0.85rem;
+    }
+    
+    .bounty-image-container {
+        width: 100%;
+        order: 1;
+    }
+    
+    .bounty-image {
+        height: auto;
+        max-height: 250px;
+    }
+    
+    .checklist-item {
+        font-size: 0.8rem;
+        padding: 6px 0;
+    }
+    
+    .checklist-item i {
+        font-size: 1rem;
+        width: 22px;
+    }
+    
+    .modal-close-btn {
+        top: -45px;
+        right: 0;
+        width: 35px;
+        height: 35px;
+    }
+    
+    .modal-caption {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .bounty-header {
+        padding: 0.8rem;
+    }
+    
+    .company-icon {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+    }
+    
+    .company-details h3 {
+        font-size: 0.9rem;
+    }
+    
+    .bounty-year {
+        font-size: 0.7rem;
+    }
+    
+    .bounty-body {
+        padding: 0.8rem;
+    }
+    
+    .bounty-description p {
+        font-size: 0.8rem;
+    }
+    
+    .checklist-item {
+        font-size: 0.75rem;
+        padding: 5px 0;
+    }
+    
+    .checklist-item i {
+        font-size: 0.9rem;
+        width: 20px;
+    }
+    
+    .image-hint span {
+        font-size: 0.7rem;
+    }
+}
+
+/* Laptop/Desktop - Layout horizontal */
+@media (min-width: 769px) {
+    .bounty-body {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+    
+    .bounty-description {
+        flex: 1;
+    }
+    
+    .bounty-image-container {
+        width: 320px;
+    }
+    
+    .bounty-image {
+        height: 200px;
+    }
 }
 
 /* === HALL OF FAME === */
@@ -1179,4 +1485,408 @@ img {
     .hall-of-fame-item { padding: 16px; }
 
     .footer-links { gap: 16px; }
+}
+/* Animasi particle background yang dinamis */
+@keyframes float-particle {
+    0% {
+        transform: translateY(0) translateX(0) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.5;
+    }
+    90% {
+        opacity: 0.5;
+    }
+    100% {
+        transform: translateY(-100vh) translateX(100px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@keyframes float-particle-reverse {
+    0% {
+        transform: translateY(100vh) translateX(0) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.3;
+    }
+    90% {
+        opacity: 0.3;
+    }
+    100% {
+        transform: translateY(-100vh) translateX(-100px) rotate(-360deg);
+        opacity: 0;
+    }
+}
+
+/* Floating particles */
+.particles-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.particle {
+    position: absolute;
+    background: linear-gradient(135deg, rgba(100, 255, 218, 0.4), rgba(100, 255, 218, 0.1));
+    border-radius: 50%;
+    pointer-events: none;
+    animation: float-particle linear infinite;
+}
+
+.particle:nth-child(odd) {
+    animation-name: float-particle-reverse;
+    background: linear-gradient(135deg, rgba(0, 255, 200, 0.3), rgba(0, 150, 255, 0.1));
+}
+
+/* Glow text animation */
+@keyframes textGlow {
+    0%, 100% {
+        text-shadow: 0 0 5px rgba(100, 255, 218, 0.5);
+    }
+    50% {
+        text-shadow: 0 0 20px rgba(100, 255, 218, 0.8), 0 0 30px rgba(100, 255, 218, 0.4);
+    }
+}
+
+/* Ripple effect pada button */
+@keyframes ripple {
+    0% {
+        transform: scale(0);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+/* Hover lift effect */
+@keyframes lift {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Pulse effect */
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+/* Shimmer effect untuk certificate items */
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+/* Rotate border animation */
+@keyframes rotateBorder {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Typing cursor blink */
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+
+/* Slide in from left */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Slide in from right */
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Scale in */
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Rotate in */
+@keyframes rotateIn {
+    from {
+        opacity: 0;
+        transform: rotate(-10deg) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: rotate(0) scale(1);
+    }
+}
+
+/* Class untuk animasi tambahan */
+.fade-in {
+    animation: scaleIn 0.6s ease forwards;
+}
+
+/* Class untuk animasi yang sudah ada */
+.fade-in.animated {
+    animation: none;
+}
+
+/* Hover effect untuk certificate items */
+.certificate-item {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.certificate-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.certificate-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(100, 255, 218, 0.1), transparent);
+    transition: left 0.5s;
+    z-index: 1;
+}
+
+.certificate-item:hover::before {
+    left: 100%;
+}
+
+/* Animated border untuk image container */
+.certificate-image-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.certificate-image-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    transition: all 0.3s;
+    pointer-events: none;
+}
+
+.certificate-image-container:hover::after {
+    border-color: rgba(100, 255, 218, 0.5);
+    box-shadow: 0 0 20px rgba(100, 255, 218, 0.3);
+}
+
+/* Zoom effect untuk image */
+.certificate-image {
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.certificate-image-container:hover .certificate-image {
+    transform: scale(1.05);
+}
+
+/* Animated overlay */
+.image-overlay {
+    transition: opacity 0.3s ease;
+}
+
+.image-overlay i {
+    transition: transform 0.3s ease;
+}
+
+.certificate-image-container:hover .image-overlay i {
+    transform: scale(1.2);
+}
+
+/* Button hover animation */
+.filter-btn {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.filter-btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(100, 255, 218, 0.2);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.filter-btn:hover::before {
+    width: 100%;
+    height: 100%;
+}
+
+/* Skill bar dengan gradient animasi */
+.skill-progress {
+    position: relative;
+    overflow: hidden;
+    transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.skill-progress::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    animation: shimmer 2s infinite;
+}
+
+/* Stat number dengan smooth transition */
+.stat-number {
+    transition: all 0.3s ease;
+}
+
+.stat-card:hover .stat-number {
+    transform: scale(1.05);
+    color: var(--secondary-color);
+}
+
+/* Link hover effect */
+.certificate-link {
+    position: relative;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.certificate-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--secondary-color);
+    transition: width 0.3s ease;
+}
+
+.certificate-link:hover::after {
+    width: 100%;
+}
+
+/* Modal animation */
+.image-modal.active .modal-content {
+    animation: scaleIn 0.3s ease;
+}
+
+.modal-close {
+    transition: transform 0.3s ease;
+}
+
+.modal-close:hover {
+    transform: rotate(90deg);
+}
+
+/* Scrollbar animation */
+::-webkit-scrollbar-thumb {
+    transition: background 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #64ffda;
+}
+
+/* Loading skeleton animation */
+@keyframes loadingPulse {
+    0%, 100% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+.loading-skeleton {
+    animation: loadingPulse 1.5s ease infinite;
+}
+
+/* Gradient border animation untuk section */
+.section-header::after {
+    animation: rotateBorder 3s linear infinite;
+}
+
+/* Typing cursor */
+.typewriter-text::after {
+    animation: blink 1s step-end infinite;
+}
+
+/* Menu active animation */
+.nav-menu.active {
+    animation: slideInRight 0.3s ease;
+}
+
+.hamburger.active .bar:nth-child(1) {
+    animation: rotateIn 0.3s ease forwards;
+}
+
+/* Glass morphism hover effect */
+.glass-card {
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.glass-card:hover {
+    backdrop-filter: blur(15px);
+    box-shadow: 0 8px 32px rgba(100, 255, 218, 0.1);
 }
