@@ -179,6 +179,16 @@ const certificates = [
         title: 'Kartika CSIRT Pussiberad',
         type: 'national',
         image: 'Sertifikat/serti34.jpg'
+    },
+    {
+        title: 'Diskominfo Kota Banjarmasin',
+        type: 'national',
+        image: 'Sertifikat/serti35.jpg'
+    },
+    {
+        title: 'BMKG CSIRT',
+        type: 'national',
+        image: 'Sertifikat/serti36.jpg'
     }
 ];
 
