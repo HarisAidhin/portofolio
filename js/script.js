@@ -189,6 +189,11 @@ const certificates = [
         title: 'BMKG CSIRT',
         type: 'national',
         image: 'Sertifikat/serti36.jpg'
+    },
+    {
+        title: 'Purbalinggakab CSIRT',
+        type: 'national',
+        image: 'Sertifikat/serti37.jpg'
     }
 ];
 
