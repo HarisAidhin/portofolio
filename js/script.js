@@ -198,7 +198,7 @@ const certificates = [
     },
 
         {
-        title: 'Diskominfo Manggarai Kabupaten',
+        title: 'Diskominfo Manggarai Barat',
         type: 'national',
         image: 'Sertifikat/serti38.jpg'
     },
