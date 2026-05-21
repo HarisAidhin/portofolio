@@ -190,11 +190,25 @@ const certificates = [
         type: 'national',
         image: 'Sertifikat/serti36.jpg'
     },
+
     {
         title: 'Purbalinggakab CSIRT',
         type: 'national',
         image: 'Sertifikat/serti37.jpg'
+    },
+
+        {
+        title: 'Diskominfo Manggarai Kabupaten',
+        type: 'national',
+        image: 'Sertifikat/serti38.jpg'
+    },
+
+{
+        title: 'Universitas Negeri Jakarta',
+        type: 'national',
+        image: 'Sertifikat/serti39.jpg'
     }
+    
 ];
 
 // Image Modal Functionality
