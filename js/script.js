@@ -74,50 +74,60 @@ const certificates = [
     {
         title: 'Avans Hogeschool',
         type: 'international',
-        image: 'Sertifikat/serti30.jpg'
+        image: 'Sertifikat/serti29.jpg'
     },
     {
         title: 'Avans Hogeschool',
         type: 'international',
-        image: 'Sertifikat/serti31.jpg'
+        image: 'Sertifikat/serti30.jpg'
     },
     {
         title: 'Diskominfo DIY',
         type: 'national',
-        image: 'Sertifikat/serti14.jpg',
+        image: 'Sertifikat/serti13.jpg',
         link: 'https://sadewa.jogjaprov.go.id/pdf?id=U2FsdGVkX1p1L2u3S71CuVnCertYAS0m24za1JHLtMRNZqRNRV0gs8YlldJFu5p1L2u3SZ7p1L2u3SS5NFrPv2q8rxqtP6lf1NT5xp1L2u3Sgge1Q2u3A4le1Q2u3A4l&document_type=targetedtte'
     },
     {
         title: 'Diskominfo Kota Bekasi',
         type: 'national',
-        image: 'Sertifikat/serti15.jpg'
+        image: 'Sertifikat/serti14.jpg'
     },
     {
         title: 'Diskominfo Kutai Kartanegara',
         type: 'national',
-        image: 'Sertifikat/serti16.jpg',
+        image: 'Sertifikat/serti15.jpg',
         link: 'https://ttis.kukarkab.go.id/whitehat-etam?page=3'
     },
     {
         title: 'Universitas Negeri Jakarta',
         type: 'national',
-        image: 'Sertifikat/serti17.jpg'
+        image: 'Sertifikat/serti16.jpg'
     },
     {
         title: 'Universitas Airlangga',
         type: 'national',
-        image: 'Sertifikat/serti18.jpg',
+        image: 'Sertifikat/serti17.jpg',
         link:'https://unairtrust.unair.ac.id/esign/qBphWE0fnvmGDY0CPNrz'
     },
     {
         title: 'Universitas Dirgantara Marsekal Suryadarma',
         type: 'national',
-        image: 'Sertifikat/serti19.jpg'
+        image: 'Sertifikat/serti18.jpg'
     },
     {
         title: 'Sumedangkab CSIRT',
         type: 'national',
+        image: 'Sertifikat/serti19.jpg'
+    },
+    {
+        title: 'Politeknik Siber Cerdika International',
+        type: 'national',
         image: 'Sertifikat/serti20.jpg'
+    },
+    {
+        title: 'PT. JULO',
+        type: 'national',
+        image: 'Sertifikat/serti31.jpg'
     },
     {
         title: 'Politeknik Siber Cerdika International',
@@ -125,89 +135,88 @@ const certificates = [
         image: 'Sertifikat/serti21.jpg'
     },
     {
-        title: 'PT. JULO',
-        type: 'national',
-        image: 'Sertifikat/serti32.jpg'
-    },
-    {
-        title: 'Politeknik Siber Cerdika International',
+        title: 'TransJakarta CSIRT',
         type: 'national',
         image: 'Sertifikat/serti22.jpg'
     },
     {
-        title: 'TransJakarta CSIRT',
+        title: 'Bpbd Kota Magelang',
         type: 'national',
         image: 'Sertifikat/serti23.jpg'
     },
     {
-        title: 'Bpbd Kota Magelang',
+        title: 'Detik.com',
         type: 'national',
         image: 'Sertifikat/serti24.jpg'
     },
     {
-        title: 'Detik.com',
+        title: 'Sumedangkab CSIRT',
         type: 'national',
         image: 'Sertifikat/serti25.jpg'
     },
     {
-        title: 'Sumedangkab CSIRT',
-        type: 'national',
-        image: 'Sertifikat/serti26.jpg'
-    },
-    {
         title: 'Jawa Tengah CSIRT',
         type: 'national',
-        image: 'Sertifikat/serti27.jpg',
+        image: 'Sertifikat/serti26.jpg',
         link:'https://pdki.cloud/s/xrZMYojieSts9Me'
     },
     {
         title: 'PU CSIRT',
+        type: 'national',
+        image: 'Sertifikat/serti27.jpg'
+    },
+    {
+        title: 'PUTI Security (TelkomUniversity)',
         type: 'national',
         image: 'Sertifikat/serti28.jpg'
     },
     {
         title: 'PUTI Security (TelkomUniversity)',
         type: 'national',
-        image: 'Sertifikat/serti29.jpg'
-    },
-    {
-        title: 'PUTI Security (TelkomUniversity)',
-        type: 'national',
-        image: 'Sertifikat/serti33.jpg'
+        image: 'Sertifikat/serti32.jpg'
     },
     {
         title: 'Kartika CSIRT Pussiberad',
         type: 'national',
-        image: 'Sertifikat/serti34.jpg'
+        image: 'Sertifikat/serti33.jpg'
     },
     {
         title: 'Diskominfo Kota Banjarmasin',
         type: 'national',
-        image: 'Sertifikat/serti35.jpg'
+        image: 'Sertifikat/serti34.jpg'
     },
     {
         title: 'BMKG CSIRT',
         type: 'national',
-        image: 'Sertifikat/serti36.jpg'
+        image: 'Sertifikat/serti35.jpg'
     },
 
     {
         title: 'Purbalinggakab CSIRT',
         type: 'national',
-        image: 'Sertifikat/serti37.jpg'
+        image: 'Sertifikat/serti36.jpg'
     },
 
         {
         title: 'Diskominfo Manggarai Barat',
         type: 'national',
-        image: 'Sertifikat/serti38.jpg'
+        image: 'Sertifikat/serti37.jpg'
     },
 
 {
         title: 'Universitas Negeri Jakarta',
         type: 'national',
+        image: 'Sertifikat/serti38.jpg'
+    }
+    ,
+
+{
+        title: 'Jambiprov CSIRT',
+        type: 'national',
         image: 'Sertifikat/serti39.jpg'
     }
+    
+    
     
 ];
 
