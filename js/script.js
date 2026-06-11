@@ -214,6 +214,16 @@ const certificates = [
         title: 'Jambiprov CSIRT',
         type: 'national',
         image: 'Sertifikat/serti39.jpg'
+    },
+{
+        title: 'PT. Dibimbing Digital Indonesia',
+        type: 'national',
+        image: 'Sertifikat/serti40.jpg'
+    },
+{
+        title: 'DQlab.id',
+        type: 'national',
+        image: 'Sertifikat/serti41.jpg'
     }
     
     
