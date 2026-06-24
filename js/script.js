@@ -221,7 +221,7 @@ const certificates = [
         image: 'Sertifikat/serti40.jpg'
     },
 {
-        title: 'DQlab.id',
+        title: 'DQLab.id',
         type: 'national',
         image: 'Sertifikat/serti41.jpg'
     },
@@ -234,6 +234,11 @@ const certificates = [
         title: 'DQLab.id',
         type: 'national',
         image: 'Sertifikat/serti43.jpg'
+    },
+{
+        title: 'DQLab.id',
+        type: 'national',
+        image: 'Sertifikat/serti44.jpg'
     }
     
     
