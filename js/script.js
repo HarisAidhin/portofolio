@@ -239,6 +239,11 @@ const certificates = [
         title: 'DQLab.id',
         type: 'national',
         image: 'Sertifikat/serti44.jpg'
+    },
+{
+        title: 'Diskominfotik Provinsi Lampung',
+        type: 'national',
+        image: 'Sertifikat/serti45.jpg'
     }
     
     
