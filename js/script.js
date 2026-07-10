@@ -244,6 +244,11 @@ const certificates = [
         title: 'Diskominfotik Provinsi Lampung',
         type: 'national',
         image: 'Sertifikat/serti45.jpg'
+    },
+{
+        title: 'Sibermuda.id',
+        type: 'national',
+        image: 'Sertifikat/serti46.jpg'
     }
     
     
