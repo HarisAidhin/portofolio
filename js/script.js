@@ -240,15 +240,21 @@ const certificates = [
         type: 'national',
         image: 'Sertifikat/serti44.jpg'
     },
+,
 {
-        title: 'Diskominfotik Provinsi Lampung',
+        title: 'DQLab.id',
         type: 'national',
         image: 'Sertifikat/serti45.jpg'
     },
 {
-        title: 'Sibermuda.id',
+        title: 'Diskominfotik Provinsi Lampung',
         type: 'national',
         image: 'Sertifikat/serti46.jpg'
+    },
+{
+        title: 'Sibermuda.id',
+        type: 'national',
+        image: 'Sertifikat/serti47.jpg'
     }
     
     
