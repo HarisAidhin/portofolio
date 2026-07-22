@@ -255,6 +255,11 @@ const certificates = [
         title: 'Sibermuda.id',
         type: 'national',
         image: 'Sertifikat/serti47.jpg'
+    },
+{
+        title: 'Purbalinggakab CSIRT',
+        type: 'national',
+        image: 'Sertifikat/serti48.jpg'
     }
     
     
