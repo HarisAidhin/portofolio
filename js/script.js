@@ -261,6 +261,12 @@ const certificates = [
         type: 'national',
         image: 'Sertifikat/serti48.jpg'
     }
+    ,
+{
+        title: 'Universitas Muhammadiyah Metro',
+        type: 'national',
+        image: 'Sertifikat/serti49.jpg'
+    }
     
     
     
