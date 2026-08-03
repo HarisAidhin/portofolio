@@ -266,6 +266,11 @@ const certificates = [
         title: 'Universitas Muhammadiyah Metro',
         type: 'national',
         image: 'Sertifikat/serti49.jpg'
+    },
+{
+        title: 'Universitas Multimedia Nusantara',
+        type: 'national',
+        image: 'Sertifikat/serti50.jpg'
     }
     
     
