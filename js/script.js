@@ -272,6 +272,12 @@ const certificates = [
         type: 'national',
         image: 'Sertifikat/serti50.jpg'
     }
+    ,
+{
+        title: 'Detik.com',
+        type: 'national',
+        image: 'Sertifikat/serti51.jpg'
+    }
     
     
     
