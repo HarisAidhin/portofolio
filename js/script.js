@@ -279,7 +279,12 @@ const certificates = [
         image: 'Sertifikat/serti51.jpg'
     }
     
-    
+,
+ {
+        title: 'LOMBA BUG BOUNTY BMKG CSIRT',
+        type: 'national',
+        image: 'Sertifikat/serti35.jpg'
+    }
     
 ];
 
