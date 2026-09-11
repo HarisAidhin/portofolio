@@ -850,7 +850,7 @@ student_data = fetch_student_data(nim_list)</code></pre>
                                 ports:
                                 - &quot;8101:80&quot;
                                 environment:
-                                - MINIO_BUCKET=siska-prod
+                                - MINIO_BUCKET=[REDACTED]
                                 - MINIO_URL=https://maxio.[REDACTED].id
                                 - MINIO_ACCESS_KEY=[REDACTED]
                                 - MINIO_SECRET_KEY=[REDACTED]
@@ -911,7 +911,7 @@ student_data = fetch_student_data(nim_list)</code></pre>
                     <div class="writeup-impact">
                         <h3><i class="fas fa-exclamation-circle"></i> Dampak</h3>
                         <ul>
-    <li><strong>Credential Exposure & Data Access:</strong> Bocornya Kunci Akses (Access Key) dan Kunci Rahasia (Secret Key) MinIO memungkinkan pihak luar mengakses penyimpanan cloud (S3 bucket) "siska-prod" secara langsung tanpa otorisasi.</li>
+    <li><strong>Credential Exposure & Data Access:</strong> Bocornya Kunci Akses (Access Key) dan Kunci Rahasia (Secret Key) MinIO memungkinkan pihak luar mengakses penyimpanan cloud (S3 bucket) "[REDACTED]" secara langsung tanpa otorisasi.</li>
     <li><strong>Risk of Data Tampering / Loss:</strong> Pihak yang tidak berwenang dapat membaca, mengunggah, mengubah, atau menghapus berkas dan dokumen yang tersimpan di dalam bucket S3 perusahaan.</li>
     <li><strong>Privilege Escalation Risk:</strong> Penggunaan kapabilitas `SYS_ADMIN`, perangkat `/dev/fuse`, serta penonaktifan AppArmor (`apparmor:unconfined`) pada container meningkatkan risiko *container escape* jika aplikasi berhasil dikompromikan.</li>
 </ul>
