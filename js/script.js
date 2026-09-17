@@ -7,7 +7,7 @@ const skillProgressBars = document.querySelectorAll('.skill-progress');
 const statNumbers = document.querySelectorAll('.stat-number');
 const copyButtons = document.querySelectorAll('.copy-code');
 
-// Certificate Data
+// Certificate Data (TIDAK DIUBAH)
 const certificates = [
     {
         title: 'Diskominfo Kabupaten Bantul',
@@ -288,7 +288,7 @@ const certificates = [
     
 ];
 
-// Image Modal Functionality
+// ==================== IMAGE MODAL ====================
 function createImageModal() {
     const modalHTML = `
         <div class="image-modal">
@@ -320,11 +320,26 @@ function createImageModal() {
         modalTitle.textContent = title;
         modal.classList.add('active');
         document.body.style.overflow = 'hidden';
+        
+        // Elegant entrance
+        modalImage.style.opacity = '0';
+        modalImage.style.transform = 'scale(0.92)';
+        requestAnimationFrame(() => {
+            modalImage.style.transition = 'opacity 0.4s cubic-bezier(0.22, 1, 0.36, 1), transform 0.4s cubic-bezier(0.22, 1, 0.36, 1)';
+            modalImage.style.opacity = '1';
+            modalImage.style.transform = 'scale(1)';
+        });
     };
     
     function closeModal() {
-        modal.classList.remove('active');
-        document.body.style.overflow = 'auto';
+        modalImage.style.opacity = '0';
+        modalImage.style.transform = 'scale(0.95)';
+        
+        setTimeout(() => {
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+            modalImage.style.transition = '';
+        }, 280);
     }
     
     modalClose.addEventListener('click', closeModal);
@@ -337,7 +352,7 @@ function createImageModal() {
     });
 }
 
-// Mobile Navigation
+// ==================== MOBILE NAVIGATION ====================
 if (hamburger) {
     hamburger.addEventListener('click', () => {
         hamburger.classList.toggle('active');
@@ -352,7 +367,7 @@ document.querySelectorAll('.nav-link').forEach(link => {
     });
 });
 
-// Typewriter Effect
+// ==================== TYPEWRITER (lebih smooth) ====================
 const typewriterText = document.querySelector('.typewriter-text');
 if (typewriterText) {
     const texts = ['Penetration Tester', 'Bug Hunter'];
@@ -373,67 +388,97 @@ if (typewriterText) {
         
         if (!isDeleting && charIndex === currentText.length) {
             isDeleting = true;
-            setTimeout(typeWriter, 2000);
+            setTimeout(typeWriter, 2200);
         } else if (isDeleting && charIndex === 0) {
             isDeleting = false;
             textIndex = (textIndex + 1) % texts.length;
-            setTimeout(typeWriter, 500);
+            setTimeout(typeWriter, 400);
         } else {
-            setTimeout(typeWriter, isDeleting ? 50 : 100);
+            // Typing lebih cepat, deleting lebih lembut
+            setTimeout(typeWriter, isDeleting ? 35 : 85);
         }
     }
     
-    setTimeout(typeWriter, 1000);
+    setTimeout(typeWriter, 800);
 }
 
-// Load Certificates
+// ==================== LOAD CERTIFICATES (dengan staggered elegant animation) ====================
 function loadCertificates(filter = 'all') {
     if (!certificateGrid) return;
-    certificateGrid.innerHTML = '';
     
-    const filteredCerts = filter === 'all' 
-        ? certificates 
-        : certificates.filter(cert => cert.type === filter);
+    // Smooth fade-out dulu
+    certificateGrid.style.opacity = '0';
+    certificateGrid.style.transform = 'translateY(12px)';
+    certificateGrid.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
     
-    filteredCerts.forEach(cert => {
-        const certElement = document.createElement('div');
-        certElement.className = 'certificate-item fade-in';
+    setTimeout(() => {
+        certificateGrid.innerHTML = '';
         
-        certElement.innerHTML = `
-            <div class="certificate-image-container">
-                <img src="${cert.image}" alt="${cert.title}" class="certificate-image">
-                <div class="image-overlay">
-                    <i class="fas fa-expand"></i>
+        const filteredCerts = filter === 'all' 
+            ? certificates 
+            : certificates.filter(cert => cert.type === filter);
+        
+        filteredCerts.forEach((cert, index) => {
+            const certElement = document.createElement('div');
+            certElement.className = 'certificate-item';
+            
+            // Initial state for animation
+            certElement.style.opacity = '0';
+            certElement.style.transform = 'translateY(28px) scale(0.97)';
+            certElement.style.transition = `opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1) ${index * 0.045}s, 
+                                           transform 0.55s cubic-bezier(0.22, 1, 0.36, 1) ${index * 0.045}s`;
+            
+            certElement.innerHTML = `
+                <div class="certificate-image-container">
+                    <img src="${cert.image}" alt="${cert.title}" class="certificate-image" loading="lazy">
+                    <div class="image-overlay">
+                        <i class="fas fa-expand"></i>
+                    </div>
                 </div>
-            </div>
-            <div class="certificate-content">
-                <h4 class="certificate-title">${cert.title}</h4>
-                <span class="certificate-type">${cert.type === 'national' ? 'Nasional' : 'Internasional'}</span>
-                ${cert.link ? 
-                    `<a href="${cert.link}" target="_blank" class="certificate-link">
-                        <i class="fas fa-external-link-alt"></i> Verifikasi Sertifikat
-                    </a>` : 
-                    '<p class="certificate-link"><i class="fas fa-certificate"></i> Sertifikat</p>'
-                }
-            </div>
-        `;
-        
-        const imageContainer = certElement.querySelector('.certificate-image-container');
-        const image = certElement.querySelector('.certificate-image');
-        
-        if (imageContainer && image) {
-            imageContainer.addEventListener('click', (e) => {
-                if (!e.target.closest('.certificate-link')) {
-                    openImageModal(image.src, cert.title);
-                }
+                <div class="certificate-content">
+                    <h4 class="certificate-title">${cert.title}</h4>
+                    <span class="certificate-type">${cert.type === 'national' ? 'Nasional' : 'Internasional'}</span>
+                    ${cert.link ? 
+                        `<a href="${cert.link}" target="_blank" class="certificate-link">
+                            <i class="fas fa-external-link-alt"></i> Verifikasi Sertifikat
+                        </a>` : 
+                        '<p class="certificate-link"><i class="fas fa-certificate"></i> Sertifikat</p>'
+                    }
+                </div>
+            `;
+            
+            const imageContainer = certElement.querySelector('.certificate-image-container');
+            const image = certElement.querySelector('.certificate-image');
+            
+            if (imageContainer && image) {
+                imageContainer.addEventListener('click', (e) => {
+                    if (!e.target.closest('.certificate-link')) {
+                        openImageModal(image.src, cert.title);
+                    }
+                });
+            }
+            
+            certificateGrid.appendChild(certElement);
+            
+            // Trigger staggered entrance
+            requestAnimationFrame(() => {
+                requestAnimationFrame(() => {
+                    certElement.style.opacity = '1';
+                    certElement.style.transform = 'translateY(0) scale(1)';
+                });
             });
-        }
+        });
         
-        certificateGrid.appendChild(certElement);
-    });
+        // Fade grid back in
+        certificateGrid.style.opacity = '1';
+        certificateGrid.style.transform = 'translateY(0)';
+        
+        // Re-apply parallax after new items are loaded
+        setTimeout(addParallaxEffect, 100);
+    }, 280);
 }
 
-// Certificate Filtering
+// ==================== CERTIFICATE FILTERING ====================
 filterButtons.forEach(button => {
     button.addEventListener('click', () => {
         filterButtons.forEach(btn => btn.classList.remove('active'));
@@ -442,33 +487,46 @@ filterButtons.forEach(button => {
     });
 });
 
-// Animate Skill Bars
+// ==================== SKILL BARS (smooth) ====================
 function animateSkillBars() {
-    skillProgressBars.forEach(bar => {
+    skillProgressBars.forEach((bar, index) => {
         const width = bar.getAttribute('data-width');
+        bar.style.transition = `width 1.4s cubic-bezier(0.22, 1, 0.36, 1) ${index * 0.08}s`;
         bar.style.width = `${width}%`;
     });
 }
 
-// Animate Stats Counter
+// ==================== STATS COUNTER (lebih elegan) ====================
 function animateStats() {
     statNumbers.forEach(stat => {
         const target = parseInt(stat.getAttribute('data-count'));
-        const increment = target / 100;
-        let current = 0;
+        if (isNaN(target)) return;
         
-        const timer = setInterval(() => {
-            current += increment;
-            if (current >= target) {
-                current = target;
-                clearInterval(timer);
+        const duration = 1600;
+        const startTime = performance.now();
+        
+        function update(currentTime) {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            
+            // Ease-out cubic
+            const ease = 1 - Math.pow(1 - progress, 3);
+            const current = Math.floor(ease * target);
+            
+            stat.textContent = current;
+            
+            if (progress < 1) {
+                requestAnimationFrame(update);
+            } else {
+                stat.textContent = target;
             }
-            stat.textContent = Math.floor(current);
-        }, 20);
+        }
+        
+        requestAnimationFrame(update);
     });
 }
 
-// Copy Code Button
+// ==================== COPY CODE ====================
 copyButtons.forEach(button => {
     button.addEventListener('click', () => {
         const codeBlock = button.parentElement.nextElementSibling;
@@ -477,7 +535,7 @@ copyButtons.forEach(button => {
         navigator.clipboard.writeText(code).then(() => {
             const originalIcon = button.innerHTML;
             button.innerHTML = '<i class="fas fa-check"></i>';
-            button.style.color = '#64ffda';
+            button.style.color = '#a78bfa'; // violet accent
             
             setTimeout(() => {
                 button.innerHTML = originalIcon;
@@ -487,17 +545,15 @@ copyButtons.forEach(button => {
     });
 });
 
-// Smooth Scrolling
+// ==================== SMOOTH SCROLLING ====================
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         if (this.getAttribute('href') === '#') return;
         
         e.preventDefault();
         const targetId = this.getAttribute('href');
-        
-        if (targetId === '#') return;
-        
         const targetElement = document.querySelector(targetId);
+        
         if (targetElement) {
             window.scrollTo({
                 top: targetElement.offsetTop - 80,
@@ -507,10 +563,10 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Intersection Observer for animations
+// ==================== INTERSECTION OBSERVER ====================
 const mainObserverOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -100px 0px'
+    threshold: 0.12,
+    rootMargin: '0px 0px -80px 0px'
 };
 
 const mainObserver = new IntersectionObserver((entries) => {
@@ -522,55 +578,65 @@ const mainObserver = new IntersectionObserver((entries) => {
                 const width = entry.target.getAttribute('data-width');
                 setTimeout(() => {
                     entry.target.style.width = `${width}%`;
-                }, 300);
+                }, 200);
             }
             
             if (entry.target.classList.contains('stat-number')) {
                 const target = parseInt(entry.target.getAttribute('data-count'));
-                const increment = target / 100;
-                let current = 0;
+                if (isNaN(target)) return;
                 
-                const timer = setInterval(() => {
-                    current += increment;
-                    if (current >= target) {
-                        current = target;
-                        clearInterval(timer);
+                const duration = 1500;
+                const startTime = performance.now();
+                
+                function update(currentTime) {
+                    const elapsed = currentTime - startTime;
+                    const progress = Math.min(elapsed / duration, 1);
+                    const ease = 1 - Math.pow(1 - progress, 3);
+                    entry.target.textContent = Math.floor(ease * target);
+                    
+                    if (progress < 1) {
+                        requestAnimationFrame(update);
+                    } else {
+                        entry.target.textContent = target;
                     }
-                    entry.target.textContent = Math.floor(current);
-                }, 20);
+                }
+                requestAnimationFrame(update);
             }
+            
+            mainObserver.unobserve(entry.target);
         }
     });
 }, mainObserverOptions);
 
-// Particle Background
+// ==================== PARTICLE BACKGROUND (lebih elegan & performant) ====================
 function createParticleBackground() {
     const particleContainer = document.createElement('div');
     particleContainer.className = 'particles-container';
     document.body.insertBefore(particleContainer, document.body.firstChild);
     
-    const particleCount = 50;
+    const particleCount = window.innerWidth < 768 ? 28 : 42;
     
     for (let i = 0; i < particleCount; i++) {
         const particle = document.createElement('div');
         particle.className = 'particle';
         
-        const size = Math.random() * 6 + 2;
+        const size = Math.random() * 4.5 + 1.5;
         particle.style.width = `${size}px`;
         particle.style.height = `${size}px`;
         particle.style.left = `${Math.random() * 100}%`;
+        particle.style.bottom = `-${Math.random() * 20}%`;
         
-        const duration = Math.random() * 20 + 10;
+        const duration = Math.random() * 18 + 14;
         particle.style.animationDuration = `${duration}s`;
-        particle.style.animationDelay = `${Math.random() * 10}s`;
+        particle.style.animationDelay = `${Math.random() * 12}s`;
         
         particleContainer.appendChild(particle);
     }
 }
 
-// Ripple Effect
+// ==================== RIPPLE EFFECT (smooth) ====================
 function addRippleEffect() {
-    const buttons = document.querySelectorAll('.filter-btn, .certificate-link, .modal-close');
+    const buttons = document.querySelectorAll('.filter-btn, .certificate-link, .modal-close, .btn');
     
     buttons.forEach(button => {
         button.addEventListener('click', function(e) {
@@ -581,60 +647,81 @@ function addRippleEffect() {
             const x = e.clientX - rect.left;
             const y = e.clientY - rect.top;
             
-            ripple.style.left = `${x}px`;
-            ripple.style.top = `${y}px`;
-            ripple.style.position = 'absolute';
-            ripple.style.width = '0px';
-            ripple.style.height = '0px';
-            ripple.style.borderRadius = '50%';
-            ripple.style.background = 'rgba(100, 255, 218, 0.4)';
-            ripple.style.transform = 'translate(-50%, -50%)';
-            ripple.style.pointerEvents = 'none';
+            ripple.style.cssText = `
+                position: absolute;
+                left: ${x}px;
+                top: ${y}px;
+                width: 0;
+                height: 0;
+                border-radius: 50%;
+                background: rgba(167, 139, 250, 0.35);
+                transform: translate(-50%, -50%);
+                pointer-events: none;
+                z-index: 10;
+            `;
             
             this.style.position = 'relative';
             this.style.overflow = 'hidden';
             this.appendChild(ripple);
             
-            setTimeout(() => {
-                ripple.style.transition = 'all 0.6s ease-out';
-                ripple.style.width = '200px';
-                ripple.style.height = '200px';
+            requestAnimationFrame(() => {
+                ripple.style.transition = 'all 0.65s cubic-bezier(0.22, 1, 0.36, 1)';
+                ripple.style.width = '220px';
+                ripple.style.height = '220px';
                 ripple.style.opacity = '0';
-            }, 10);
+            });
             
-            setTimeout(() => {
-                ripple.remove();
-            }, 600);
+            setTimeout(() => ripple.remove(), 700);
         });
     });
 }
 
-// Parallax Effect for Certificates
+// ==================== PARALLAX (lebih lembut) ====================
 function addParallaxEffect() {
     const certificateItems = document.querySelectorAll('.certificate-item');
     
     certificateItems.forEach(item => {
-        item.addEventListener('mousemove', (e) => {
-            const rect = item.getBoundingClientRect();
+        // Remove previous listeners if any by cloning
+        const newItem = item.cloneNode(true);
+        item.parentNode.replaceChild(newItem, item);
+        
+        newItem.addEventListener('mousemove', (e) => {
+            const rect = newItem.getBoundingClientRect();
             const x = e.clientX - rect.left;
             const y = e.clientY - rect.top;
             
             const centerX = rect.width / 2;
             const centerY = rect.height / 2;
             
-            const rotateX = (y - centerY) / 20;
-            const rotateY = (centerX - x) / 20;
+            // Lebih lembut
+            const rotateX = (y - centerY) / 28;
+            const rotateY = (centerX - x) / 28;
             
-            item.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-5px)`;
+            newItem.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-6px)`;
+            newItem.style.transition = 'transform 0.12s ease-out';
         });
         
-        item.addEventListener('mouseleave', () => {
-            item.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(0)';
+        newItem.addEventListener('mouseleave', () => {
+            newItem.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(0)';
+            newItem.style.transition = 'transform 0.45s cubic-bezier(0.22, 1, 0.36, 1)';
         });
+        
+        // Re-attach modal click
+        const imageContainer = newItem.querySelector('.certificate-image-container');
+        const image = newItem.querySelector('.certificate-image');
+        const title = newItem.querySelector('.certificate-title')?.textContent || '';
+        
+        if (imageContainer && image) {
+            imageContainer.addEventListener('click', (e) => {
+                if (!e.target.closest('.certificate-link')) {
+                    openImageModal(image.src, title);
+                }
+            });
+        }
     });
 }
 
-// Bounty Modal Functions
+// ==================== BOUNTY MODAL ====================
 function openBountyModal(imageSrc, caption) {
     const modal = document.getElementById('bountyModal');
     if (!modal) return;
@@ -642,65 +729,79 @@ function openBountyModal(imageSrc, caption) {
     const modalImage = document.getElementById('modalImage');
     const modalCaption = document.getElementById('modalCaption');
     
-    if (modalImage) modalImage.src = imageSrc;
+    if (modalImage) {
+        modalImage.src = imageSrc;
+        modalImage.style.opacity = '0';
+        modalImage.style.transform = 'scale(0.94)';
+    }
     if (modalCaption) modalCaption.textContent = caption || 'Sertifikat Bounty';
+    
     modal.classList.add('active');
     document.body.style.overflow = 'hidden';
+    
+    requestAnimationFrame(() => {
+        if (modalImage) {
+            modalImage.style.transition = 'opacity 0.4s cubic-bezier(0.22, 1, 0.36, 1), transform 0.4s cubic-bezier(0.22, 1, 0.36, 1)';
+            modalImage.style.opacity = '1';
+            modalImage.style.transform = 'scale(1)';
+        }
+    });
 }
 
 function closeBountyModal() {
     const modal = document.getElementById('bountyModal');
     if (!modal) return;
     
-    modal.classList.remove('active');
-    document.body.style.overflow = 'auto';
+    const modalImage = document.getElementById('modalImage');
+    if (modalImage) {
+        modalImage.style.opacity = '0';
+        modalImage.style.transform = 'scale(0.96)';
+    }
+    
+    setTimeout(() => {
+        modal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }, 280);
 }
 
-// Bounty Section Init
+// ==================== BOUNTY SECTION ====================
 function initBountySection() {
-    // Close modal with ESC
     document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') {
-            closeBountyModal();
-        }
+        if (e.key === 'Escape') closeBountyModal();
     });
     
-    // Close modal on overlay click
     const modalOverlay = document.querySelector('#bountyModal .modal-overlay');
     if (modalOverlay) {
         modalOverlay.addEventListener('click', closeBountyModal);
     }
     
-    // Prevent modal container click from closing
     const modalContainer = document.querySelector('#bountyModal .modal-container');
     if (modalContainer) {
-        modalContainer.addEventListener('click', function(e) {
-            e.stopPropagation();
-        });
+        modalContainer.addEventListener('click', e => e.stopPropagation());
     }
     
-    // Bounty items scroll animation
-    const bountyItemsForScroll = document.querySelectorAll('.bounty-item');
-    const bountyScrollObserver = new IntersectionObserver((entries) => {
+    // Elegant staggered entrance for bounty items
+    const bountyItems = document.querySelectorAll('.bounty-item');
+    const bountyObserver = new IntersectionObserver((entries) => {
         entries.forEach((entry, index) => {
             if (entry.isIntersecting) {
                 setTimeout(() => {
                     entry.target.style.opacity = '1';
                     entry.target.style.transform = 'translateY(0)';
-                }, index * 100);
-                bountyScrollObserver.unobserve(entry.target);
+                }, index * 90);
+                bountyObserver.unobserve(entry.target);
             }
         });
-    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
     
-    bountyItemsForScroll.forEach(item => {
+    bountyItems.forEach(item => {
         item.style.opacity = '0';
-        item.style.transform = 'translateY(20px)';
-        item.style.transition = 'all 0.5s ease';
-        bountyScrollObserver.observe(item);
+        item.style.transform = 'translateY(30px)';
+        item.style.transition = 'opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1), transform 0.65s cubic-bezier(0.22, 1, 0.36, 1)';
+        bountyObserver.observe(item);
     });
     
-    // Animate bounty stats counter
+    // Bounty stats counter
     const bountyStats = document.querySelectorAll('.bounty-stat-number');
     
     const animateBountyStats = () => {
@@ -708,16 +809,19 @@ function initBountySection() {
             const target = parseInt(stat.getAttribute('data-count'));
             if (isNaN(target)) return;
             
-            let current = 0;
-            const increment = target / 60;
-            const timer = setInterval(() => {
-                current += increment;
-                if (current >= target) {
-                    current = target;
-                    clearInterval(timer);
-                }
-                stat.textContent = Math.floor(current);
-            }, 30);
+            const duration = 1400;
+            const startTime = performance.now();
+            
+            function update(currentTime) {
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                const ease = 1 - Math.pow(1 - progress, 3);
+                stat.textContent = Math.floor(ease * target);
+                
+                if (progress < 1) requestAnimationFrame(update);
+                else stat.textContent = target;
+            }
+            requestAnimationFrame(update);
         });
     };
     
@@ -730,65 +834,81 @@ function initBountySection() {
                     statsObserver.unobserve(entry.target);
                 }
             });
-        }, { threshold: 0.5 });
+        }, { threshold: 0.4 });
         
         statsObserver.observe(bountySection);
     }
 }
 
+// ==================== HEADER SCROLL EFFECT ====================
+function initHeaderScroll() {
+    const header = document.getElementById('header');
+    if (!header) return;
+    
+    let lastScroll = 0;
+    
+    window.addEventListener('scroll', () => {
+        const currentScroll = window.pageYOffset;
+        
+        if (currentScroll > 40) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+        
+        lastScroll = currentScroll;
+    }, { passive: true });
+}
+
 // ==================== MAIN INITIALIZATION ====================
 document.addEventListener('DOMContentLoaded', () => {
-    // Certificate modal
     createImageModal();
-    
-    // Load certificates
     loadCertificates();
     
-    // Observe elements for main animations
     document.querySelectorAll('.fade-in').forEach(el => mainObserver.observe(el));
     
-    // Set current year in footer
     const yearSpan = document.querySelector('#current-year');
     if (yearSpan) {
         yearSpan.textContent = new Date().getFullYear();
     }
     
-    // Additional animations
     createParticleBackground();
     addRippleEffect();
-    addParallaxEffect();
-    
-    // Bounty section
     initBountySection();
+    initHeaderScroll();
     
-    // Image loading animation
-    const images = document.querySelectorAll('img');
-    images.forEach(img => {
-        img.addEventListener('load', function() {
-            this.style.animation = 'scaleIn 0.3s ease';
-        });
+    // Image load animation
+    document.querySelectorAll('img').forEach(img => {
+        if (img.complete) {
+            img.style.animation = 'scaleIn 0.4s cubic-bezier(0.22, 1, 0.36, 1)';
+        } else {
+            img.addEventListener('load', function() {
+                this.style.animation = 'scaleIn 0.4s cubic-bezier(0.22, 1, 0.36, 1)';
+            });
+        }
     });
 });
 
-// Window scroll event
+// Window scroll (fallback for older elements)
 window.addEventListener('scroll', () => {
-    const elements = document.querySelectorAll('.fade-in:not(.animated)');
-    elements.forEach(element => {
+    document.querySelectorAll('.fade-in:not(.animated)').forEach(element => {
         const elementTop = element.getBoundingClientRect().top;
-        const windowHeight = window.innerHeight;
-        
-        if (elementTop < windowHeight - 100) {
+        if (elementTop < window.innerHeight - 90) {
             element.classList.add('animated');
+            
             if (element.classList.contains('skill-progress')) {
                 const width = element.getAttribute('data-width');
                 element.style.width = `${width}%`;
             }
         }
     });
-});
+}, { passive: true });
 
-// Window load event
+// Window load
 window.addEventListener('load', () => {
-    animateSkillBars();
-    animateStats();
+    // Slight delay biar lebih smooth setelah page fully loaded
+    setTimeout(() => {
+        animateSkillBars();
+        animateStats();
+    }, 150);
 });

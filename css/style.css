@@ -1,7 +1,4 @@
-/* ============================================================
-   HARIS AIDHIN RAMADHAN — Security Portfolio
-   Dark Minimal Design | Black + Cyan Accent
-   ============================================================ */
+
 
 @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap');
 
@@ -138,7 +135,7 @@ img {
 }
 
 .nav-link:hover {
-    color: var(--white);
+    color: var(--red);
     background: var(--bg-4);
 }
 
@@ -272,7 +269,7 @@ img {
 
 .btn-primary {
     background: var(--accent);
-    color: #000;
+    color: #af0404;
 }
 
 .btn-primary:hover {
