@@ -472,16 +472,69 @@ img {
 }
 
 .stat {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 24px 16px;
     background: var(--bg-2);
     text-align: center;
-    transition: background var(--transition);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+    cursor: pointer;
+    isolation: isolate;
 }
 
-.stat:hover { background: var(--bg-3); }
+/* Glow effect background yang muncul saat hover */
+.stat::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+        circle at 50% 0%,
+        color-mix(in srgb, var(--accent) 25%, transparent),
+        transparent 70%
+    );
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: -1;
+}
+
+/* Garis aksen atas yang tumbuh dari tengah */
+.stat::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) scaleX(0);
+    width: 80%;
+    height: 2px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        var(--accent),
+        transparent
+    );
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-origin: center;
+}
+
+.stat:hover {
+    background: var(--bg-3);
+    transform: translateY(-4px);
+    z-index: 2;
+    box-shadow: 
+        0 10px 30px -10px color-mix(in srgb, var(--accent) 40%, transparent),
+        0 0 0 1px color-mix(in srgb, var(--accent) 30%, transparent);
+}
+
+.stat:hover::before {
+    opacity: 1;
+}
+
+.stat:hover::after {
+    transform: translateX(-50%) scaleX(1);
+}
 
 .stat-number {
     font-size: 2.2rem;
@@ -490,6 +543,15 @@ img {
     line-height: 1;
     margin-bottom: 6px;
     font-family: var(--font-mono);
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    display: inline-block;
+}
+
+.stat:hover .stat-number {
+    transform: scale(1.15) translateY(-2px);
+    text-shadow: 
+        0 0 20px color-mix(in srgb, var(--accent) 60%, transparent),
+        0 0 40px color-mix(in srgb, var(--accent) 30%, transparent);
 }
 
 .stat-label {
@@ -497,7 +559,54 @@ img {
     color: var(--text-3);
     text-transform: uppercase;
     letter-spacing: 0.08em;
+    transition: all 0.4s ease;
 }
+
+.stat:hover .stat-label {
+    color: var(--text-1, var(--text-3));
+    letter-spacing: 0.12em;
+}
+
+/* Efek kilau (shine) yang menyapu saat hover */
+.stat .stat-number::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        color-mix(in srgb, var(--accent) 40%, transparent),
+        transparent
+    );
+    transition: left 0.6s ease;
+}
+
+.stat:hover .stat-number::after {
+    left: 100%;
+}
+
+/* Fallback untuk browser yang tidak support color-mix */
+@supports not (background: color-mix(in srgb, red 50%, blue)) {
+    .stat::before {
+        background: radial-gradient(
+            circle at 50% 0%,
+            rgba(255, 255, 255, 0.08),
+            transparent 70%
+        );
+    }
+    .stat:hover {
+        box-shadow: 
+            0 10px 30px -10px rgba(0, 0, 0, 0.4),
+            0 0 0 1px var(--accent);
+    }
+    .stat:hover .stat-number {
+        text-shadow: 0 0 20px var(--accent);
+    }
+}
+
 
 /* === SKILLS === */
 .skills-grid {
