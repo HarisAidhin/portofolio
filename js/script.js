@@ -630,6 +630,22 @@ function createParticleBackground() {
         particle.style.animationDuration = `${duration}s`;
         particle.style.animationDelay = `${Math.random() * 12}s`;
         
+        // Tambahan: bentuk kotak / diamond kecil (bukan bulat)
+        particle.style.borderRadius = '2px';
+        
+        // Tambahan animasi keren: glow + variasi warna + variasi opacity
+        const glowSize = Math.random() * 6 + 4;
+        const glowColor = Math.random() > 0.5
+            ? 'rgba(0, 229, 176, 0.55)'   // accent utama
+            : 'rgba(167, 139, 250, 0.5)'; // violet
+        const opacity = Math.random() * 0.5 + 0.25;
+        
+        particle.style.boxShadow = `0 0 ${glowSize}px ${glowColor}, 0 0 ${glowSize * 2}px ${glowColor}`;
+        particle.style.opacity = opacity;
+        particle.style.background = Math.random() > 0.6
+            ? 'linear-gradient(135deg, rgba(0,229,176,0.9), rgba(167,139,250,0.6))'
+            : '';
+        
         particleContainer.appendChild(particle);
     }
 }
@@ -801,6 +817,15 @@ function initBountySection() {
         bountyObserver.observe(item);
     });
     
+    const profile = document.querySelector('.profile-img');
+
+profile.addEventListener('click', () => {
+  profile.classList.add('active');
+  clearTimeout(profile._t);
+  profile._t = setTimeout(() => {
+    profile.classList.remove('active');
+  }, 1500);
+});
     // Bounty stats counter
     const bountyStats = document.querySelectorAll('.bounty-stat-number');
     
