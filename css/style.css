@@ -16,8 +16,8 @@
     --bg-4:      #181818;
     --border:    #1e1e1e;
     --border-2:  #2a2a2a;
-    --accent:    #00e5b0;
-    --accent-2:  #00b88a;
+    --accent:    #ff2c1d;
+    --accent-2:  #bcdf0c;
     --accent-dim: rgba(0, 229, 176, 0.08);
     --accent-glow: rgba(0, 229, 176, 0.2);
     --text:      #e8e8e8;
@@ -25,8 +25,8 @@
     --text-3:    #555555;
     --white:     #ffffff;
     --red:       #ff4d4d;
-    --yellow:    #f5a623;
-    --green:     #e5d600;
+    --yellow:    #97f523;
+    --green:     #514e18;
     --font-display: 'Syne', sans-serif;
     --font-mono:    'JetBrains Mono', monospace;
     --radius:    6px;
@@ -896,7 +896,7 @@ img {
     padding: 1rem;
     background: linear-gradient(135deg, rgba(100, 255, 218, 0.08), rgba(100, 255, 218, 0.02));
     border-radius: 12px;
-    border-left: 4px solid #64ffda;
+    border-left: 4px solid #ff2c1d;
 }
 
 .bounty-intro p {
@@ -959,7 +959,7 @@ img {
     background: rgba(100, 255, 218, 0.1);
     border-radius: 20px;
     font-size: 0.75rem;
-    color: #64ffda;
+    color:#ff2c1d;
     border: 1px solid rgba(100, 255, 218, 0.2);
 }
 
@@ -984,7 +984,7 @@ img {
 }
 
 .bounty-description strong {
-    color: #64ffda;
+    color: #ff2c1d;
 }
 
 /* Reward Checklist - icon tetap asli (certificate, tshirt, mug, coin, dll) */
@@ -1005,7 +1005,7 @@ img {
 .checklist-item i {
     font-size: 1.1rem;
     width: 24px;
-    color: #64ffda;  /* Warna icon tetap hijau kebiruan */
+    color: #ff2c1d;  /* Warna icon tetap hijau kebiruan */
 }
 
 .checklist-item:last-child {

@@ -608,47 +608,6 @@ const mainObserver = new IntersectionObserver((entries) => {
     });
 }, mainObserverOptions);
 
-// ==================== PARTICLE BACKGROUND (lebih elegan & performant) ====================
-function createParticleBackground() {
-    const particleContainer = document.createElement('div');
-    particleContainer.className = 'particles-container';
-    document.body.insertBefore(particleContainer, document.body.firstChild);
-    
-    const particleCount = window.innerWidth < 768 ? 28 : 42;
-    
-    for (let i = 0; i < particleCount; i++) {
-        const particle = document.createElement('div');
-        particle.className = 'particle';
-        
-        const size = Math.random() * 4.5 + 1.5;
-        particle.style.width = `${size}px`;
-        particle.style.height = `${size}px`;
-        particle.style.left = `${Math.random() * 100}%`;
-        particle.style.bottom = `-${Math.random() * 20}%`;
-        
-        const duration = Math.random() * 18 + 14;
-        particle.style.animationDuration = `${duration}s`;
-        particle.style.animationDelay = `${Math.random() * 12}s`;
-        
-        // Tambahan: bentuk kotak / diamond kecil (bukan bulat)
-        particle.style.borderRadius = '2px';
-        
-        // Tambahan animasi keren: glow + variasi warna + variasi opacity
-        const glowSize = Math.random() * 6 + 4;
-        const glowColor = Math.random() > 0.5
-            ? 'rgba(0, 229, 176, 0.55)'   // accent utama
-            : 'rgba(167, 139, 250, 0.5)'; // violet
-        const opacity = Math.random() * 0.5 + 0.25;
-        
-        particle.style.boxShadow = `0 0 ${glowSize}px ${glowColor}, 0 0 ${glowSize * 2}px ${glowColor}`;
-        particle.style.opacity = opacity;
-        particle.style.background = Math.random() > 0.6
-            ? 'linear-gradient(135deg, rgba(0,229,176,0.9), rgba(167,139,250,0.6))'
-            : '';
-        
-        particleContainer.appendChild(particle);
-    }
-}
 
 // ==================== RIPPLE EFFECT (smooth) ====================
 function addRippleEffect() {
