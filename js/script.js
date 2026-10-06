@@ -284,6 +284,11 @@ const certificates = [
         title: 'LOMBA BUG BOUNTY BMKG CSIRT',
         type: 'national',
         image: 'Sertifikat/serti52.jpg'
+    },
+ {
+        title: 'Diskominfo Kota Banjarmasin',
+        type: 'national',
+        image: 'Sertifikat/serti53.jpg'
     }
     
 ];
