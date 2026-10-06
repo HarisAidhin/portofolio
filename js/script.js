@@ -281,7 +281,7 @@ const certificates = [
     
 ,
  {
-        title: 'LOMBA BUG BOUNTY BMKG CSIRT',
+        title: 'Lomba Bug Bounty BMKG CSIRT',
         type: 'national',
         image: 'Sertifikat/serti52.jpg'
     },
