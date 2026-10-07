@@ -80,7 +80,7 @@
             background: var(--accent);
         }
 
-        /* ===== REDESIGNED HEADER & NAVIGATION ===== */
+        
         #header {
             position: fixed;
             top: 0;
@@ -93,7 +93,6 @@
             transition: background var(--transition-smooth), border-color var(--transition-smooth);
         }
 
-        /* subtle glow on scroll – optional via JS but we can do it with :has or just rely on backdrop */
         #header.scrolled {
             background: rgba(8, 8, 8, 0.92);
             border-bottom-color: var(--border);
@@ -106,7 +105,7 @@
             height: 64px;
         }
 
-        /* logo */
+        
         .logo {
             display: flex;
             align-items: center;
@@ -139,7 +138,7 @@
             color: var(--accent);
         }
 
-        /* ---------- DESKTOP NAV (default, min-width: 769px) ---------- */
+      
         .nav-menu {
             display: flex;
             list-style: none;
@@ -198,9 +197,9 @@
             transform: scale(0.96);
         }
 
-        /* ---------- HAMBURGER (mobile) ---------- */
+        
         .hamburger {
-            display: none; /* hidden by default, shown on mobile */
+            display: none;
             flex-direction: column;
             justify-content: center;
             align-items: center;
@@ -235,7 +234,7 @@
             transform-origin: center;
         }
 
-        /* hamburger active state (cross) */
+      
         .hamburger.active span:nth-child(1) {
             transform: translateY(7px) rotate(45deg);
             background: var(--accent);
@@ -253,7 +252,7 @@
             width: 24px;
         }
 
-        /* ---------- MOBILE NAV OVERLAY (≤ 768px) ---------- */
+        
         @media (max-width: 768px) {
             .hamburger {
                 display: flex;
@@ -307,7 +306,7 @@
                 transform: translateY(0);
             }
 
-            /* stagger animation for nav items */
+           
             .nav-menu.active .nav-item:nth-child(1) { transition-delay: 0.06s; }
             .nav-menu.active .nav-item:nth-child(2) { transition-delay: 0.12s; }
             .nav-menu.active .nav-item:nth-child(3) { transition-delay: 0.18s; }
@@ -327,7 +326,7 @@
             }
 
             .nav-link::after {
-                display: none; /* remove underline on mobile */
+                display: none; 
             }
 
             .nav-link:hover,
@@ -347,13 +346,13 @@
                 transform: scale(0.97);
             }
 
-            /* Prevent body scroll when menu open */
+           
             body.menu-open {
                 overflow: hidden;
             }
         }
 
-        /* small mobile adjustments */
+      
         @media (max-width: 480px) {
             .nav-container {
                 height: 56px;
@@ -377,9 +376,9 @@
             }
         }
 
-        /* ===== END REDESIGNED NAVIGATION ===== */
+        
 
-        /* HERO */
+       
         .writeup-hero {
             padding: 140px 0 80px;
             text-align: center;
@@ -435,7 +434,7 @@
             letter-spacing: 0.06em;
         }
 
-        /* CONTENT */
+        
         .writeup-section {
             padding: 72px 0;
         }
@@ -603,7 +602,7 @@
             font-weight: 600;
         }
 
-        /* Code block */
+        
         .code-block {
             background: #050505;
             border: 1px solid var(--border-2);
@@ -656,7 +655,7 @@
             padding: 0;
         }
 
-        /* Images */
+        
         .writeup-image {
             margin: 20px 0;
             border-radius: var(--radius-lg);
@@ -686,7 +685,7 @@
             letter-spacing: 0.04em;
         }
 
-        /* Impact / Resolution box */
+        
         .writeup-impact,
         .writeup-resolution {
             border-left: 2px solid var(--border-2);
@@ -701,7 +700,7 @@
             border-left-color: rgba(0, 229, 176, 0.4);
         }
 
-        /* FOOTER */
+        
         #footer {
             border-top: 1px solid var(--border);
             padding: 48px 0;
@@ -760,7 +759,7 @@
             color: var(--text-3);
         }
 
-        /* RESPONSIVE (existing non-nav) */
+        
         @media (max-width: 768px) {
             .writeup-header,
             .writeup-content {
