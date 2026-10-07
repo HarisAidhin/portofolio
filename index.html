@@ -309,7 +309,7 @@
                 </div>
             </div>
 
-            <!-- Bounty Item 3 - Planetban -->
+              <!-- Bounty Item 3 - Planetban -->
             <div class="bounty-item fade-in">
                 <div class="bounty-header">
                     <div class="bounty-company">
@@ -318,15 +318,18 @@
                         </div>
                         <div class="company-details">
                             <h3>Planetban</h3>
-                            <span class="bounty-year">2026</span>
+                            <span class="bounty-year">2025</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="bounty-body">
                     <div class="bounty-description">
-                        <p>Saya menemukan kerentanan <strong>Unauthenticated phpMyAdmin Access with Root Database Privileges</strong>
-                            pada <code>confirm-microsite.planetban.co.id</code> yang memungkinkan akses penuh ke database tanpa autentikasi.</p>
+                        <p>Saya melaporkan temuan <strong>Unauthenticated phpMyAdmin Access with Root Database Privileges</strong>
+                            pada <code>confirm-microsite.planetban.co.id</code>. Setelah dilakukan investigasi menyeluruh oleh tim teknis
+                            Planetban, panel tersebut merupakan bagian dari <strong>database bawaan instalasi (default installation)</strong>
+                            yang tidak digunakan dalam lingkungan produksi maupun operasional sistem. Temuan ini dikategorikan sebagai
+                            <strong>kerentanan tingkat minor (Low Risk)</strong> karena tidak mengancam data sensitif maupun aset utama perusahaan.</p>
 
                         <div class="reward-checklist">
                             <div class="checklist-item">
@@ -338,17 +341,15 @@
 
                     <div class="bounty-image-container">
                         <img src="Imagewriteup/Ss_bountyplanetban.jpg" alt="Bukti Bounty Planetban" class="bounty-image"
-                            onclick="openBountyModal(this.src, 'Planetban - Unauthenticated phpMyAdmin Access')">
+                            onclick="openBountyModal(this.src, 'Planetban - Unauthenticated phpMyAdmin Access (Low Risk)')">
                         <div class="image-hint"
-                            onclick="openBountyModal(this.parentElement.querySelector('img').src, 'Planetban - Unauthenticated phpMyAdmin Access')">
+                            onclick="openBountyModal(this.parentElement.querySelector('img').src, 'Planetban - Unauthenticated phpMyAdmin Access (Low Risk)')">
                             <i class="fas fa-search-plus"></i>
                             <span>Klik untuk perbesar</span>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
 
     <!-- Modal Lightbox -->
     <div id="bountyModal" class="bounty-modal">
