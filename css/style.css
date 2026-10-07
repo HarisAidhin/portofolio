@@ -18,14 +18,13 @@
     --border-2:  #2a2a2a;
     --accent:    #ff2c1d;
     --accent-2:  #bcdf0c;
-    --accent-dim: rgba(0, 229, 176, 0.08);
-    --accent-glow: rgba(0, 229, 176, 0.2);
+    --accent-dim: rgba(243, 255, 18, 0.08);
+    --accent-glow: rgba(255, 3, 3, 0.2);
     --text:      #e8e8e8;
     --text-2:    #999999;
     --text-3:    #555555;
     --white:     #ffffff;
-    --red:       #ff4d4d;
-    --yellow:    #97f523;
+    --yellow:    #ebf523;
     --green:     #514e18;
     --font-display: 'Syne', sans-serif;
     --font-mono:    'JetBrains Mono', monospace;
@@ -182,7 +181,7 @@ img {
     right: -200px;
     width: 600px;
     height: 600px;
-    background: radial-gradient(circle, rgba(0, 229, 176, 0.04) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(255, 3, 3, 0.04) 0%, transparent 70%);
     pointer-events: none;
 }
 
@@ -497,7 +496,7 @@ img {
     border: 1px solid;
 }
 
-.badge-primary  { background: var(--accent-dim); color: var(--accent); border-color: rgba(0,229,176,0.3); }
+.badge-primary  { background: var(--accent-dim); color: var(--accent); border-color: rgb(1, 255, 196); }
 .badge-secondary{ background: rgba(255,77,77,0.08); color: #ff6b6b; border-color: rgba(255,77,77,0.3); }
 .badge-accent   { background: rgba(245,166,35,0.08); color: var(--yellow); border-color: rgba(245,166,35,0.3); }
 
@@ -847,7 +846,7 @@ img {
     font-size: 0.68rem;
     color: var(--accent);
     background: var(--accent-dim);
-    border: 1px solid rgba(0,229,176,0.2);
+    border: 1px solid rgb(255, 222, 4);
     padding: 2px 8px;
     border-radius: 20px;
     margin-bottom: 10px;
@@ -871,7 +870,7 @@ img {
     margin-top: 24px;
     padding: 14px 20px;
     background: var(--accent-dim);
-    border: 1px solid rgba(0,229,176,0.15);
+    border: 1px solid rgba(204, 255, 0, 0.15);
     border-radius: var(--radius);
     font-family: var(--font-mono);
     font-size: 0.82rem;
