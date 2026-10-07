@@ -9,7 +9,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap"
         rel="stylesheet">
-    <style>
+   <style>
         *,
         *::before,
         *::after {
@@ -19,22 +19,22 @@
         }
 
         :root {
-            --bg: #080808;
-            --bg-2: #0d0d0d;
-            --bg-3: #111111;
-            --bg-4: #181818;
-            --border: #1e1e1e;
-            --border-2: #2a2a2a;
-            --accent: #00e5b0;
-            --accent-2: #00b88a;
-            --accent-dim: rgba(0, 229, 176, 0.08);
-            --accent-glow: rgba(0, 229, 176, 0.2);
-            --text: #e8e8e8;
-            --text-2: #999999;
-            --text-3: #555555;
+            --bg: #0a0a0c;
+            --bg-2: #101014;
+            --bg-3: #16161c;
+            --bg-4: #1e1e26;
+            --border: #26262e;
+            --border-2: #35353f;
+            --accent: #f97316;
+            --accent-2: #fbbf24;
+            --accent-dim: rgba(249, 115, 22, 0.10);
+            --accent-glow: rgba(249, 115, 22, 0.25);
+            --text: #ececf1;
+            --text-2: #a1a1aa;
+            --text-3: #6b6b76;
             --white: #ffffff;
-            --red: #ff4d4d;
-            --yellow: #f5a623;
+            --red: #ef4444;
+            --yellow: #fbbf24;
             --font-display: 'Syne', sans-serif;
             --font-mono: 'JetBrains Mono', monospace;
             --radius: 6px;
@@ -86,15 +86,15 @@
             top: 0;
             width: 100%;
             z-index: 1000;
-            background: rgba(8, 8, 8, 0.75);
+            background: rgba(10, 10, 12, 0.75);
             backdrop-filter: blur(20px) saturate(180%);
             -webkit-backdrop-filter: blur(20px) saturate(180%);
-            border-bottom: 1px solid rgba(30, 30, 30, 0.5);
+            border-bottom: 1px solid rgba(38, 38, 46, 0.5);
             transition: background var(--transition-smooth), border-color var(--transition-smooth);
         }
 
         #header.scrolled {
-            background: rgba(8, 8, 8, 0.92);
+            background: rgba(10, 10, 12, 0.92);
             border-bottom-color: var(--border);
         }
 
@@ -266,7 +266,7 @@
                 bottom: 0;
                 width: 100%;
                 height: 100vh;
-                background: rgba(8, 8, 8, 0.96);
+                background: rgba(10, 10, 12, 0.96);
                 backdrop-filter: blur(24px) saturate(180%);
                 -webkit-backdrop-filter: blur(24px) saturate(180%);
                 flex-direction: column;
@@ -339,7 +339,7 @@
             .nav-link.active {
                 color: var(--accent);
                 background: var(--accent-dim);
-                border-color: rgba(0, 229, 176, 0.2);
+                border-color: rgba(249, 115, 22, 0.2);
             }
 
             .nav-link:active {
@@ -395,7 +395,7 @@
             transform: translateX(-50%);
             width: 600px;
             height: 600px;
-            background: radial-gradient(circle, rgba(0, 229, 176, 0.05) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(249, 115, 22, 0.05) 0%, transparent 70%);
             pointer-events: none;
         }
 
@@ -427,7 +427,7 @@
             font-size: 0.72rem;
             color: var(--accent);
             background: var(--accent-dim);
-            border: 1px solid rgba(0, 229, 176, 0.2);
+            border: 1px solid rgba(249, 115, 22, 0.2);
             padding: 6px 14px;
             border-radius: 20px;
             margin-bottom: 24px;
@@ -511,15 +511,15 @@
         }
 
         .severity-high {
-            background: rgba(255, 77, 77, 0.1);
-            color: #ff6b6b;
-            border: 1px solid rgba(255, 77, 77, 0.3);
+            background: rgba(239, 68, 68, 0.1);
+            color: #f87171;
+            border: 1px solid rgba(239, 68, 68, 0.3);
         }
 
         .severity-medium {
-            background: rgba(245, 166, 35, 0.1);
+            background: rgba(251, 191, 36, 0.1);
             color: var(--yellow);
-            border: 1px solid rgba(245, 166, 35, 0.3);
+            border: 1px solid rgba(251, 191, 36, 0.3);
         }
 
         .writeup-header h2 {
@@ -571,7 +571,7 @@
             background: var(--accent-dim);
             padding: 2px 6px;
             border-radius: 3px;
-            border: 1px solid rgba(0, 229, 176, 0.15);
+            border: 1px solid rgba(249, 115, 22, 0.15);
         }
 
         .writeup-content ul {
@@ -693,11 +693,11 @@
         }
 
         .writeup-impact {
-            border-left-color: rgba(255, 77, 77, 0.4);
+            border-left-color: rgba(239, 68, 68, 0.4);
         }
 
         .writeup-resolution {
-            border-left-color: rgba(0, 229, 176, 0.4);
+            border-left-color: rgba(249, 115, 22, 0.4);
         }
 
         
@@ -794,8 +794,7 @@
         <div class="container" style="max-width: 1160px;">
             <div class="nav-container">
                 <div class="logo">
-                    <i class="fas fa-shield-alt"></i>
-                    <span>HA<span class="logo-accent">R</span></span>
+                    <span>DH<span class="logo-accent">X</span></span>
                 </div>
                 <ul class="nav-menu" id="navMenu">
                     <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
