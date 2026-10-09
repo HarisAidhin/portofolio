@@ -289,6 +289,16 @@ const certificates = [
         title: 'Diskominfo Kota Banjarmasin',
         type: 'national',
         image: 'Sertifikat/serti53.jpg'
+    },
+ {
+        title: 'Xeratic.com',
+        type: 'national',
+        image: 'Sertifikat/serti54.png'
+    },
+ {
+        title: 'Xeratic.com',
+        type: 'national',
+        image: 'Sertifikat/serti55.png'
     }
     
 ];
