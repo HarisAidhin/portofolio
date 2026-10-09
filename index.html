@@ -101,7 +101,7 @@
                             <span class="stat-label">Hall of Fame</span>
                         </div>
                         <div class="stat">
-                            <span class="stat-number" data-count="4">0</span>
+                            <span class="stat-number" data-count="7">0</span>
                             <span class="stat-label">Rewards</span>
                         </div>
                     </div>
@@ -203,196 +203,302 @@
         </div>
     </section>
 
-    <!-- Bounty Section -->
-    <section id="bounty" class="section">
-        <div class="container">
-            <h2 class="section-title">
-                <span class="section-title-number"></span> Rewards
-            </h2>
+    Ini kode HTML lengkap yang sudah disatukan. Untuk 3 item baru (DQLab, Xeratic, dan Universitas Islam Depok), bagian gambar (bounty-image-container) sudah dihapus sesuai permintaan:
 
-            <div class="bounty-intro fade-in">
-                <p>Alhamdulillah, saya menerima apresiasi dan swag dari beberapa program pelaporan kerentanan (Vulnerability Disclosure Program). Berikut adalah beberapa di antaranya:</p>
-            </div>
+HTML
 
-            <!-- Bounty Item 1 - Detik.com -->
-            <div class="bounty-item fade-in">
-                <div class="bounty-header">
-                    <div class="bounty-company">
-                        <div class="company-icon">
-                            <i class="fas fa-newspaper"></i>
-                        </div>
-                        <div class="company-details">
-                            <h3>Detik.com</h3>
-                            <span class="bounty-year">2025</span>
-                        </div>
+<!-- Bounty Section -->
+<section id="bounty" class="section">
+    <div class="container">
+        <h2 class="section-title">
+            <span class="section-title-number"></span> Rewards
+        </h2>
+
+        <div class="bounty-intro fade-in">
+            <p>Alhamdulillah, saya menerima apresiasi dan swag dari beberapa program pelaporan kerentanan (Vulnerability Disclosure Program). Berikut adalah beberapa di antaranya:</p>
+        </div>
+
+        <!-- ==================== TAHUN 2025 ==================== -->
+
+        <!-- Bounty Item 1 - Detik.com (2025) -->
+        <div class="bounty-item fade-in">
+            <div class="bounty-header">
+                <div class="bounty-company">
+                    <div class="company-icon">
+                        <i class="fas fa-newspaper"></i>
                     </div>
-                </div>
-
-                <div class="bounty-body">
-                    <div class="bounty-description">
-                        <p>Saya menemukan kerentanan <strong>Open Redirect</strong> pada domain detik.com yang dapat
-                            dimanfaatkan untuk phishing attack.</p>
-
-                        <div class="reward-checklist">
-                            <div class="checklist-item">
-                                <i class="fas fa-certificate checked"></i>
-                                <span>Sertifikat Penghargaan</span>
-                            </div>
-                            <div class="checklist-item">
-                                <i class="fas fa-tshirt checked"></i>
-                                <span>Kaos Exclusive</span>
-                            </div>
-                            <div class="checklist-item">
-                                <i class="fas fa-mug-hot checked"></i>
-                                <span>Tumbler</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="bounty-image-container">
-                        <img src="Imagewriteup/Ss_bountydetikcom.jpg" alt="Bukti Bounty Detik.com" class="bounty-image"
-                            onclick="openBountyModal(this.src, 'Detik.com - Open Redirect Vulnerability')">
-                        <div class="image-hint"
-                            onclick="openBountyModal(this.parentElement.querySelector('img').src, 'Detik.com - Open Redirect Vulnerability')">
-                            <i class="fas fa-search-plus"></i>
-                            <span>Klik untuk perbesar</span>
-                        </div>
+                    <div class="company-details">
+                        <h3>Detik.com</h3>
+                        <span class="bounty-year">2025</span>
                     </div>
                 </div>
             </div>
 
-            <!-- Bounty Item 2 - UT Austin -->
-            <div class="bounty-item fade-in">
-                <div class="bounty-header">
-                    <div class="bounty-company">
-                        <div class="company-icon">
-                            <i class="fas fa-university"></i>
+            <div class="bounty-body">
+                <div class="bounty-description">
+                    <p>Saya menemukan kerentanan <strong>Open Redirect</strong> pada domain detik.com yang dapat
+                        dimanfaatkan untuk phishing attack.</p>
+
+                    <div class="reward-checklist">
+                        <div class="checklist-item">
+                            <i class="fas fa-certificate checked"></i>
+                            <span>Sertifikat Penghargaan</span>
                         </div>
-                        <div class="company-details">
-                            <h3>University of Texas at Austin</h3>
-                            <span class="bounty-year">2026</span>
+                        <div class="checklist-item">
+                            <i class="fas fa-tshirt checked"></i>
+                            <span>Kaos Exclusive</span>
+                        </div>
+                        <div class="checklist-item">
+                            <i class="fas fa-mug-hot checked"></i>
+                            <span>Tumbler</span>
                         </div>
                     </div>
                 </div>
 
-                <div class="bounty-body">
-                    <div class="bounty-description">
-                        <p>Saya menemukan <strong>dua kerentanan Information Disclosure</strong> yang memungkinkan akses
-                            ke data sensitif pada infrastruktur universitas. Alhamdulillah saya jadi <strong>pelapor pertama</strong>
-                            yang melaporkan bug pada tahun 2026 </p>
-
-                        <div class="reward-checklist">
-                            <div class="checklist-item">
-                                <i class="fas fa-coins checked"></i>
-                                <span>UT ISO Challenge Coin</span>
-                            </div>
-                            <div class="checklist-item">
-                                <i class="fas fa-envelope-open-text checked"></i>
-                                <span>Thanks Letter (Handwritten)</span>
-                            </div>
-                            <div class="checklist-item">
-                                <i class="fas fa-sticky-note checked"></i>
-                                <span>Exclusive Stickers</span>
-                            </div>
-                        </div>
+                <div class="bounty-image-container">
+                    <img src="Imagewriteup/Ss_bountydetikcom.jpg" alt="Bukti Bounty Detik.com" class="bounty-image"
+                        onclick="openBountyModal(this.src, 'Detik.com - Open Redirect Vulnerability')">
+                    <div class="image-hint"
+                        onclick="openBountyModal(this.parentElement.querySelector('img').src, 'Detik.com - Open Redirect Vulnerability')">
+                        <i class="fas fa-search-plus"></i>
+                        <span>Klik untuk perbesar</span>
                     </div>
+                </div>
+            </div>
+        </div>
 
-                    <div class="bounty-image-container">
-                        <img src="Imagewriteup/Ss_bountyutexasedu.jpg" alt="Bukti Bounty UT Austin" class="bounty-image"
-                            onclick="openBountyModal(this.src, 'UT Austin - Information Disclosure Vulnerability')">
-                        <div class="image-hint"
-                            onclick="openBountyModal(this.parentElement.querySelector('img').src, 'UT Austin - Information Disclosure Vulnerability')">
-                            <i class="fas fa-search-plus"></i>
-                            <span>Klik untuk perbesar</span>
-                        </div>
+        <!-- Bounty Item 2 - Universitas Islam Depok (2025) -->
+        <div class="bounty-item fade-in">
+            <div class="bounty-header">
+                <div class="bounty-company">
+                    <div class="company-icon">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <div class="company-details">
+                        <h3>Universitas Islam Depok</h3>
+                        <span class="bounty-year">2025</span>
                     </div>
                 </div>
             </div>
 
-              <!-- Bounty Item 3 - Planetban -->
-            <div class="bounty-item fade-in">
-                <div class="bounty-header">
-                    <div class="bounty-company">
-                        <div class="company-icon">
-                            <i class="fas fa-motorcycle"></i>
-                        </div>
-                        <div class="company-details">
-                            <h3>Planetban</h3>
-                            <span class="bounty-year">2026</span>
-                        </div>
-                    </div>
-                </div>
+            <div class="bounty-body">
+                <div class="bounty-description">
+                    <p>Saya menemukan dan melaporkan kerentanan tingkat tinggi berupa <strong>SQL Injection (SQLi)</strong> pada aplikasi/sistem web Universitas Islam Depok yang berpotensi memberikan akses tidak sah ke basis data.</p>
 
-                <div class="bounty-body">
-                    <div class="bounty-description">
-                        <p>Saya melaporkan temuan <strong>Unauthenticated phpMyAdmin Access with Root Database Privileges</strong>
-                            pada domain <code>planetban.co.id</code>. Setelah dilakukan investigasi menyeluruh oleh tim teknis
-                            Planetban, panel tersebut merupakan bagian dari <strong>database bawaan instalasi (default installation)</strong>
-                            yang tidak digunakan dalam lingkungan produksi maupun operasional sistem. Temuan ini dikategorikan sebagai
-                            <strong>kerentanan tingkat minor (Low Risk)</strong> karena tidak mengancam data sensitif maupun aset utama perusahaan.</p>
-
-                        <div class="reward-checklist">
-                            <div class="checklist-item">
-                                <i class="fas fa-ticket-alt checked"></i>
-                                <span>Payment Voucher Rp 100.000</span>
-                            </div>
+                    <div class="reward-checklist">
+                        <div class="checklist-item">
+                            <i class="fas fa-money-bill-wave checked"></i>
+                            <span>Monetary Bounty Rp 200.000</span>
                         </div>
-                    </div>
-
-                    <div class="bounty-image-container">
-                        <img src="Imagewriteup/Ss_bountyplanetban.jpg" alt="Bukti Bounty Planetban" class="bounty-image"
-                            onclick="openBountyModal(this.src, 'Planetban - Unauthenticated phpMyAdmin Access (Low Risk)')">
-                        <div class="image-hint"
-                            onclick="openBountyModal(this.parentElement.querySelector('img').src, 'Planetban - Unauthenticated phpMyAdmin Access (Low Risk)')">
-                            <i class="fas fa-search-plus"></i>
-                            <span>Klik untuk perbesar</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-             <!-- Bounty Item 4 - Citrahost -->
-            <div class="bounty-item fade-in">
-                <div class="bounty-header">
-                    <div class="bounty-company">
-                        <div class="company-icon">
-                            <i class="fas fa-server"></i>
-                        </div>
-                        <div class="company-details">
-                            <h3>Citrahost.com</h3>
-                            <span class="bounty-year">2026</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bounty-body">
-                    <div class="bounty-description">
-                        <p>Saya melaporkan temuan keamanan kepada Tim Security Citrahost (PT. CITRAWEB DIGITAL MULTISOLUSI).
-                            Sebagai bentuk apresiasi atas kontribusi dalam membantu meningkatkan keamanan sistem, saya diberikan
-                            apresiasi berupa <strong>domain gratis</strong> dengan pilihan ekstensi <code>.web.id</code>,
-                            <code>.biz.id</code>, atau <code>.my.id</code>.</p>
-
-                        <div class="reward-checklist">
-                            <div class="checklist-item">
-                                <i class="fas fa-globe checked"></i>
-                                <span>Domain Gratis (.web.id / .biz.id / .my.id)</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="bounty-image-container">
-                        <img src="Imagewriteup/Ss_bountyCitrahost.png" alt="Bukti Bounty Citrahost" class="bounty-image"
-                            onclick="openBountyModal(this.src, 'Citrahost - Security Report Appreciation')">
-                        <div class="image-hint"
-                            onclick="openBountyModal(this.parentElement.querySelector('img').src, 'Citrahost - Security Report Appreciation')">
-                            <i class="fas fa-search-plus"></i>
-                            <span>Klik untuk perbesar</span>
+                        <div class="checklist-item">
+                            <i class="fas fa-certificate checked"></i>
+                            <span>Certificate of Appreciation</span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+
+        <!-- ==================== TAHUN 2026 ==================== -->
+
+        <!-- Bounty Item 3 - University of Texas at Austin (2026) -->
+        <div class="bounty-item fade-in">
+            <div class="bounty-header">
+                <div class="bounty-company">
+                    <div class="company-icon">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <div class="company-details">
+                        <h3>University of Texas at Austin</h3>
+                        <span class="bounty-year">2026</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bounty-body">
+                <div class="bounty-description">
+                    <p>Saya menemukan <strong>dua kerentanan Information Disclosure</strong> yang memungkinkan akses
+                        ke data sensitif pada infrastruktur universitas. Alhamdulillah saya jadi <strong>pelapor pertama</strong>
+                        yang melaporkan bug pada tahun 2026 </p>
+
+                    <div class="reward-checklist">
+                        <div class="checklist-item">
+                            <i class="fas fa-coins checked"></i>
+                            <span>UT ISO Challenge Coin</span>
+                        </div>
+                        <div class="checklist-item">
+                            <i class="fas fa-envelope-open-text checked"></i>
+                            <span>Thanks Letter (Handwritten)</span>
+                        </div>
+                        <div class="checklist-item">
+                            <i class="fas fa-sticky-note checked"></i>
+                            <span>Exclusive Stickers</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bounty-image-container">
+                    <img src="Imagewriteup/Ss_bountyutexasedu.jpg" alt="Bukti Bounty UT Austin" class="bounty-image"
+                        onclick="openBountyModal(this.src, 'UT Austin - Information Disclosure Vulnerability')">
+                    <div class="image-hint"
+                        onclick="openBountyModal(this.parentElement.querySelector('img').src, 'UT Austin - Information Disclosure Vulnerability')">
+                        <i class="fas fa-search-plus"></i>
+                        <span>Klik untuk perbesar</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bounty Item 4 - Planetban (2026) -->
+        <div class="bounty-item fade-in">
+            <div class="bounty-header">
+                <div class="bounty-company">
+                    <div class="company-icon">
+                        <i class="fas fa-motorcycle"></i>
+                    </div>
+                    <div class="company-details">
+                        <h3>Planetban</h3>
+                        <span class="bounty-year">2026</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bounty-body">
+                <div class="bounty-description">
+                    <p>Saya melaporkan temuan <strong>Unauthenticated phpMyAdmin Access with Root Database Privileges</strong>
+                        pada domain <code>planetban.co.id</code>. Setelah dilakukan investigasi menyeluruh oleh tim teknis
+                        Planetban, panel tersebut merupakan bagian dari <strong>database bawaan instalasi (default installation)</strong>
+                        yang tidak digunakan dalam lingkungan produksi maupun operasional sistem. Temuan ini dikategorikan sebagai
+                        <strong>kerentanan tingkat minor (Low Risk)</strong> karena tidak mengancam data sensitif maupun aset utama perusahaan.</p>
+
+                    <div class="reward-checklist">
+                        <div class="checklist-item">
+                            <i class="fas fa-ticket-alt checked"></i>
+                            <span>Payment Voucher Rp 100.000</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bounty-image-container">
+                    <img src="Imagewriteup/Ss_bountyplanetban.jpg" alt="Bukti Bounty Planetban" class="bounty-image"
+                        onclick="openBountyModal(this.src, 'Planetban - Unauthenticated phpMyAdmin Access (Low Risk)')">
+                    <div class="image-hint"
+                        onclick="openBountyModal(this.parentElement.querySelector('img').src, 'Planetban - Unauthenticated phpMyAdmin Access (Low Risk)')">
+                        <i class="fas fa-search-plus"></i>
+                        <span>Klik untuk perbesar</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bounty Item 5 - Citrahost (2026) -->
+        <div class="bounty-item fade-in">
+            <div class="bounty-header">
+                <div class="bounty-company">
+                    <div class="company-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <div class="company-details">
+                        <h3>Citrahost.com</h3>
+                        <span class="bounty-year">2026</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bounty-body">
+                <div class="bounty-description">
+                    <p>Saya melaporkan temuan keamanan kepada Tim Security Citrahost (PT. CITRAWEB DIGITAL MULTISOLUSI).
+                        Sebagai bentuk apresiasi atas kontribusi dalam membantu meningkatkan keamanan sistem, saya diberikan
+                        apresiasi berupa <strong>domain gratis</strong> dengan pilihan ekstensi <code>.web.id</code>,
+                        <code>.biz.id</code>, atau <code>.my.id</code>.</p>
+
+                    <div class="reward-checklist">
+                        <div class="checklist-item">
+                            <i class="fas fa-globe checked"></i>
+                            <span>Domain Gratis (.web.id / .biz.id / .my.id)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bounty-image-container">
+                    <img src="Imagewriteup/Ss_bountyCitrahost.png" alt="Bukti Bounty Citrahost" class="bounty-image"
+                        onclick="openBountyModal(this.src, 'Citrahost - Security Report Appreciation')">
+                    <div class="image-hint"
+                        onclick="openBountyModal(this.parentElement.querySelector('img').src, 'Citrahost - Security Report Appreciation')">
+                        <i class="fas fa-search-plus"></i>
+                        <span>Klik untuk perbesar</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bounty Item 6 - DQLab (2026) -->
+        <div class="bounty-item fade-in">
+            <div class="bounty-header">
+                <div class="bounty-company">
+                    <div class="company-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="company-details">
+                        <h3>DQLab (EdTech Platform)</h3>
+                        <span class="bounty-year">2026</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bounty-body">
+                <div class="bounty-description">
+                    <p>Saya berhasil mengidentifikasi berbagai kerentanan keamanan pada platform DQLab, meliputi <strong>Cross-Site Scripting (XSS)</strong>, <strong>Subdomain Takeover</strong>, <strong>Sensitive Data Exposure</strong>, <strong>Open Redirect</strong>, <strong>No Rate Limiting</strong>, <strong>Improper Input Validation</strong>, <strong>Insecure Session Management</strong>, serta <strong>Information Disclosure</strong>.</p>
+
+                    <div class="reward-checklist">
+                        <div class="checklist-item">
+                            <i class="fas fa-money-bill-wave checked"></i>
+                            <span>Monetary Bounty Rp 1.000.000</span>
+                        </div>
+                        <div class="checklist-item">
+                            <i class="fas fa-certificate checked"></i>
+                            <span>Certificate of Appreciation</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bounty Item 7 - Xeratic (2026) -->
+        <div class="bounty-item fade-in">
+            <div class="bounty-header">
+                <div class="bounty-company">
+                    <div class="company-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="company-details">
+                        <h3>Xeratic (Data Analytics Platform)</h3>
+                        <span class="bounty-year">2026</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bounty-body">
+                <div class="bounty-description">
+                    <p>Saya menemukan dan melaporkan kerentanan <strong>Stored Cross-Site Scripting (Stored XSS)</strong> pada platform Xeratic yang berpotensi dimanfaatkan untuk mengeksekusi skrip berbahaya pada sisi pengguna.</p>
+
+                    <div class="reward-checklist">
+                        <div class="checklist-item">
+                            <i class="fas fa-money-bill-wave checked"></i>
+                            <span>Monetary Bounty Rp 100.000</span>
+                        </div>
+                        <div class="checklist-item">
+                            <i class="fas fa-certificate checked"></i>
+                            <span>Certificate of Appreciation</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
 
     <!-- Modal Lightbox -->
     <div id="bountyModal" class="bounty-modal">
