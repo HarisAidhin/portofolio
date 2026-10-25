@@ -299,6 +299,11 @@ const certificates = [
         title: 'Xeratic.com',
         type: 'national',
         image: 'Sertifikat/serti55.png'
+    },
+ {
+        title: 'Banjarkab CSIRT',
+        type: 'national',
+        image: 'Sertifikat/serti56.jpg'
     }
     
 ];
