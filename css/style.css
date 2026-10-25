@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap');
 
-/* === RESET & BASE === */
+
 *, *::before, *::after {
     margin: 0;
     padding: 0;
@@ -63,13 +63,13 @@ img {
     max-width: 100%;
 }
 
-/* === SCROLLBAR === */
+
 ::-webkit-scrollbar { width: 4px; }
 ::-webkit-scrollbar-track { background: var(--bg); }
 ::-webkit-scrollbar-thumb { background: var(--border-2); border-radius: 2px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--accent); }
 
-/* === HEADER === */
+
 #header {
     position: fixed;
     top: 0;
@@ -136,7 +136,7 @@ img {
     background: var(--bg-4);
 }
 
-/* Hamburger */
+
 .hamburger {
     display: none;
     flex-direction: column;
@@ -162,7 +162,7 @@ img {
 .hamburger.active span:nth-child(2) { opacity: 0; }
 .hamburger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); background: var(--accent); }
 
-/* === HERO === */
+
 .hero {
     min-height: 100vh;
     display: flex;
@@ -287,7 +287,7 @@ img {
     transform: translateY(-1px);
 }
 
-/* Terminal */
+
 .code-terminal {
     background: var(--bg-2);
     border: 1px solid var(--border-2);
@@ -349,7 +349,7 @@ img {
     animation: blink 1s step-end infinite;
 }
 
-/* === SECTIONS === */
+
 .section {
     padding: 100px 0;
     position: relative;
@@ -384,7 +384,7 @@ img {
     letter-spacing: 0.04em;
 }
 
-/* === ABOUT === */
+
 .about-content {
     display: grid;
     grid-template-columns: 300px 1fr;
@@ -416,9 +416,9 @@ img {
     transition: background 0.6s ease 1.5s, mix-blend-mode 0.6s ease 1.5s;
 }
 
-/* teks DHX transparan */
+
 .img-overlay::after {
-    content: 'DHX';
+    content: 'ARS';
     position: absolute;
     inset: 0;
     display: flex;
@@ -449,7 +449,7 @@ img {
     pointer-events: none;
 }
 
-/* ===== efek saat hover ===== */
+
 .profile-img:hover img {
     filter: grayscale(1) brightness(0.85);
     transform: scale(1.05);
@@ -472,7 +472,7 @@ img {
     transition-delay: 0s;
 }
 
-/* teks DHX muncul saat hover */
+
 .profile-img:hover .img-overlay::after {
     opacity: 1;
     transition-delay: 0s;
@@ -504,7 +504,7 @@ img {
     line-height: 1.8;
 }
 
-/* Stats */
+
 .stats {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -530,7 +530,7 @@ img {
     isolation: isolate;
 }
 
-/* Glow effect background yang muncul saat hover */
+
 .stat::before {
     content: '';
     position: absolute;
@@ -545,7 +545,7 @@ img {
     z-index: -1;
 }
 
-/* Garis aksen atas yang tumbuh dari tengah */
+
 .stat::after {
     content: '';
     position: absolute;
@@ -612,7 +612,7 @@ img {
     letter-spacing: 0.12em;
 }
 
-/* Efek kilau (shine) yang menyapu saat hover */
+
 .stat .stat-number::after {
     content: '';
     position: absolute;
@@ -633,7 +633,7 @@ img {
     left: 100%;
 }
 
-/* Fallback untuk browser yang tidak support color-mix */
+
 @supports not (background: color-mix(in srgb, red 50%, blue)) {
     .stat::before {
         background: radial-gradient(
@@ -653,7 +653,7 @@ img {
 }
 
 
-/* === SKILLS === */
+
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -739,7 +739,7 @@ img {
     transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* === CERTIFICATES === */
+
 .certificate-filters {
     display: flex;
     gap: 8px;
@@ -881,8 +881,7 @@ img {
 .certificates-note i { color: var(--accent); }
 .certificates-note strong { color: var(--accent); }
 
-/* === BOUNTY === */
-/* Bounty Section Styles */
+
 #bounty {
     padding: 80px 0;
 }
@@ -902,7 +901,7 @@ img {
     margin: 0;
 }
 
-/* Bounty Item Card */
+
 .bounty-item {
     background: rgba(16, 16, 20, 0.7);
     backdrop-filter: blur(10px);
@@ -919,7 +918,7 @@ img {
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
 }
 
-/* Bounty Header */
+
 .bounty-header {
     padding: 1.2rem 1.5rem;
     border-bottom: 1px solid rgba(249, 115, 22, 0.1);
@@ -960,7 +959,7 @@ img {
     border: 1px solid rgba(249, 115, 22, 0.2);
 }
 
-/* Bounty Body */
+
 .bounty-body {
     display: flex;
     flex-wrap: wrap;
@@ -984,7 +983,7 @@ img {
     color: var(--accent);
 }
 
-/* Reward Checklist - icon tetap asli (certificate, tshirt, mug, coin, dll) */
+
 .reward-checklist {
     margin-top: 1rem;
 }
@@ -1009,7 +1008,7 @@ img {
     border-bottom: none;
 }
 
-/* Image Container */
+
 .bounty-image-container {
     flex-shrink: 0;
     width: 280px;
@@ -1062,7 +1061,7 @@ img {
     opacity: 1;
 }
 
-/* Modal Lightbox */
+
 .bounty-modal {
     display: none;
     position: fixed;
@@ -1136,7 +1135,6 @@ img {
     font-size: 0.9rem;
 }
 
-/* Animations */
 @keyframes modalFadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
@@ -1153,7 +1151,7 @@ img {
     }
 }
 
-/* Responsive Design */
+
 @media (max-width: 768px) {
     #bounty {
         padding: 50px 0;
@@ -1261,7 +1259,7 @@ img {
     }
 }
 
-/* Laptop/Desktop - Layout horizontal */
+
 @media (min-width: 769px) {
     .bounty-body {
         flex-direction: row;
@@ -1281,7 +1279,7 @@ img {
     }
 }
 
-/* === HALL OF FAME === */
+
 .hall-of-fame-list {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -1346,7 +1344,7 @@ img {
 .hall-of-fame-link:hover { opacity: 0.7; }
 .hall-of-fame-link i { font-size: 0.62rem; }
 
-/* === CONTACT === */
+
 .contact-content {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -1417,7 +1415,7 @@ img {
     border-color: var(--accent);
 }
 
-/* === FOOTER === */
+
 #footer {
     border-top: 1px solid var(--border);
     padding: 48px 0;
@@ -1471,7 +1469,7 @@ img {
     color: var(--text-3);
 }
 
-/* === IMAGE MODAL === */
+
 .image-modal {
     position: fixed;
     inset: 0;
@@ -1545,7 +1543,7 @@ img {
     font-family: var(--font-mono);
 }
 
-/* === ANIMATIONS === */
+
 .fade-in {
     opacity: 0;
     transform: translateY(20px);
@@ -1561,7 +1559,7 @@ img {
 .delay-2 { transition-delay: 0.3s; }
 .delay-3 { transition-delay: 0.45s; }
 
-/* === RESPONSIVE === */
+
 @media (max-width: 1024px) {
     .skills-grid { grid-template-columns: repeat(2, 1fr); }
     .stats { grid-template-columns: repeat(2, 1fr); }
@@ -1578,7 +1576,7 @@ img {
 }
 
 @media (max-width: 768px) {
-    /* Mobile Nav */
+   
     .nav-menu {
         position: fixed;
         top: 64px;
@@ -1604,7 +1602,7 @@ img {
 
     .hamburger { display: flex; }
 
-    /* Hero */
+  
     .hero-content {
         grid-template-columns: 1fr;
         gap: 40px;
@@ -1617,7 +1615,7 @@ img {
 
     .hero-visual { order: -1; }
 
-    /* Sections */
+    
     .section { padding: 72px 0; }
     .section-title { margin-bottom: 36px; }
     .skills-grid { grid-template-columns: 1fr; }
@@ -1637,7 +1635,7 @@ img {
 
     .footer-links { gap: 16px; }
 }
-/* Animasi particle background yang dinamis */
+
 @keyframes float-particle {
     0% {
         transform: translateY(0) translateX(0) rotate(0deg) scale(1);
@@ -1681,7 +1679,7 @@ img {
 }
 
 
-/* Glow text animation */
+
 @keyframes textGlow {
     0%, 100% {
         text-shadow: 0 0 5px rgba(249, 115, 22, 0.5);
@@ -1691,7 +1689,7 @@ img {
     }
 }
 
-/* Ripple effect pada button */
+
 @keyframes ripple {
     0% {
         transform: scale(0);
@@ -1703,7 +1701,7 @@ img {
     }
 }
 
-/* Hover lift effect */
+
 @keyframes lift {
     0% {
         transform: translateY(0);
@@ -1713,7 +1711,7 @@ img {
     }
 }
 
-/* Pulse effect */
+
 @keyframes pulse {
     0%, 100% {
         transform: scale(1);
@@ -1723,7 +1721,7 @@ img {
     }
 }
 
-/* Shimmer effect untuk certificate items */
+
 @keyframes shimmer {
     0% {
         background-position: -200% 0;
@@ -1733,7 +1731,7 @@ img {
     }
 }
 
-/* Rotate border animation */
+
 @keyframes rotateBorder {
     0% {
         transform: rotate(0deg);
@@ -1743,7 +1741,7 @@ img {
     }
 }
 
-/* Typing cursor blink */
+
 @keyframes blink {
     0%, 100% {
         opacity: 1;
@@ -1753,7 +1751,7 @@ img {
     }
 }
 
-/* Slide in from left */
+
 @keyframes slideInLeft {
     from {
         opacity: 0;
@@ -1765,7 +1763,7 @@ img {
     }
 }
 
-/* Slide in from right */
+
 @keyframes slideInRight {
     from {
         opacity: 0;
@@ -1777,7 +1775,7 @@ img {
     }
 }
 
-/* Scale in */
+
 @keyframes scaleIn {
     from {
         opacity: 0;
@@ -1789,7 +1787,7 @@ img {
     }
 }
 
-/* Rotate in */
+
 @keyframes rotateIn {
     from {
         opacity: 0;
@@ -1801,17 +1799,17 @@ img {
     }
 }
 
-/* Class untuk animasi tambahan */
+
 .fade-in {
     animation: scaleIn 0.6s ease forwards;
 }
 
-/* Class untuk animasi yang sudah ada */
+
 .fade-in.animated {
     animation: none;
 }
 
-/* Hover effect untuk certificate items */
+
 .certificate-item {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
@@ -1839,7 +1837,7 @@ img {
     left: 100%;
 }
 
-/* Animated border untuk image container */
+
 .certificate-image-container {
     position: relative;
     overflow: hidden;
@@ -1863,7 +1861,7 @@ img {
     box-shadow: 0 0 20px rgba(249, 115, 22, 0.25);
 }
 
-/* Zoom effect untuk image */
+
 .certificate-image {
     transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -1872,7 +1870,7 @@ img {
     transform: scale(1.05);
 }
 
-/* Animated overlay */
+
 .image-overlay {
     transition: opacity 0.3s ease;
 }
@@ -1885,7 +1883,7 @@ img {
     transform: scale(1.2);
 }
 
-/* Button hover animation */
+
 .filter-btn {
     position: relative;
     overflow: hidden;
@@ -1910,7 +1908,7 @@ img {
     height: 100%;
 }
 
-/* Skill bar dengan gradient animasi */
+
 .skill-progress {
     position: relative;
     overflow: hidden;
@@ -1928,7 +1926,7 @@ img {
     animation: shimmer 2s infinite;
 }
 
-/* Stat number dengan smooth transition */
+
 .stat-number {
     transition: all 0.3s ease;
 }
@@ -1938,7 +1936,7 @@ img {
     color: var(--accent-2);
 }
 
-/* Link hover effect */
+
 .certificate-link {
     position: relative;
     display: inline-block;
@@ -1960,7 +1958,7 @@ img {
     width: 100%;
 }
 
-/* Modal animation */
+
 .image-modal.active .modal-content {
     animation: scaleIn 0.3s ease;
 }
@@ -1973,7 +1971,7 @@ img {
     transform: rotate(90deg);
 }
 
-/* Scrollbar animation */
+
 ::-webkit-scrollbar-thumb {
     transition: background 0.3s ease;
 }
@@ -1982,7 +1980,7 @@ img {
     background: var(--accent);
 }
 
-/* Loading skeleton animation */
+
 @keyframes loadingPulse {
     0%, 100% {
         opacity: 0.5;
@@ -1996,17 +1994,17 @@ img {
     animation: loadingPulse 1.5s ease infinite;
 }
 
-/* Gradient border animation untuk section */
+
 .section-header::after {
     animation: rotateBorder 3s linear infinite;
 }
 
-/* Typing cursor */
+
 .typewriter-text::after {
     animation: blink 1s step-end infinite;
 }
 
-/* Menu active animation */
+
 .nav-menu.active {
     animation: slideInRight 0.3s ease;
 }
@@ -2015,7 +2013,7 @@ img {
     animation: rotateIn 0.3s ease forwards;
 }
 
-/* Glass morphism hover effect */
+
 .glass-card {
     transition: all 0.3s ease;
     backdrop-filter: blur(10px);
@@ -2026,7 +2024,7 @@ img {
     box-shadow: 0 8px 32px rgba(249, 115, 22, 0.1);
 }
 
-/* Press & Media Section */
+
 .press-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
