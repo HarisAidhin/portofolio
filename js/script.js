@@ -304,6 +304,13 @@ const certificates = [
         title: 'Banjarkab CSIRT',
         type: 'national',
         image: 'Sertifikat/serti56.jpg'
+    },
+    
+ {
+        title: 'Institut Teknologi Bandung',
+        type: 'national',
+        image: 'Sertifikat/serti57.jpg',
+        link: 'https://csirt.itb.ac.id/c/45240726-8e95-478d-b267-a56d96ef7cd2'
     }
     
 ];
