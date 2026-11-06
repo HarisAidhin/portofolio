@@ -317,6 +317,12 @@ const certificates = [
         type: 'national',
         image: 'Sertifikat/serti58.jpg'
     }
+, {
+        title: 'Certified Cybersecurity Educator Professional (CCEP)',
+        type: 'international',
+        image: 'Sertifikat/serti59.jpg',
+        link: 'https://courses.redteamleaders.com/exam-completion/dbf3a3c9f885853f'
+    }
     
 ];
 
