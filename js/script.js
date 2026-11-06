@@ -312,6 +312,11 @@ const certificates = [
         image: 'Sertifikat/serti57.jpg',
         link: 'https://csirt.itb.ac.id/c/45240726-8e95-478d-b267-a56d96ef7cd2'
     }
+, {
+        title: 'Badan Pangan CSIRT',
+        type: 'national',
+        image: 'Sertifikat/serti58.jpg'
+    }
     
 ];
 
