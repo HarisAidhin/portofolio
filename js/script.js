@@ -1,6 +1,9 @@
 // DOM Elements
-const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
+const navMore = document.querySelector('.nav-more');
+const navSheet = document.querySelector('.nav-sheet');
+const navSheetList = document.querySelector('.nav-sheet-list');
+const navSheetBackdrop = document.querySelector('.nav-sheet-backdrop');
 const filterButtons = document.querySelectorAll('.filter-btn');
 const certificateGrid = document.querySelector('.certificates-grid');
 const skillProgressBars = document.querySelectorAll('.skill-progress');
@@ -324,6 +327,12 @@ const certificates = [
         link: 'https://courses.redteamleaders.com/exam-completion/dbf3a3c9f885853f'
     }
     
+, {
+        title: 'Universitas Atma Jaya Yogyakarta',
+        type: 'national',
+        image: 'Sertifikat/serti60.jpg'
+    }
+    
 ];
 
 // ==================== IMAGE MODAL ====================
@@ -390,20 +399,109 @@ function createImageModal() {
     });
 }
 
-// ==================== MOBILE NAVIGATION ====================
-if (hamburger) {
-    hamburger.addEventListener('click', () => {
-        hamburger.classList.toggle('active');
-        navMenu.classList.toggle('active');
-    });
-}
+// ==================== RESPONSIVE NAVIGATION ====================
+function setupNavigation() {
+    if (!navMenu) return;
 
-document.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', () => {
-        if (hamburger) hamburger.classList.remove('active');
-        if (navMenu) navMenu.classList.remove('active');
+    const navItems = Array.from(navMenu.children);
+    const primaryHrefs = ['#about', '#skills', '#certificates', 'writeup.html', '#contact'];
+    const links = Array.from(document.querySelectorAll('.nav-link'));
+    const sections = Array.from(document.querySelectorAll('section[id]'));
+
+    function closeSheet() {
+        document.body.classList.remove('nav-sheet-open');
+        if (navMore) navMore.setAttribute('aria-expanded', 'false');
+    }
+
+    function syncLayout() {
+        const isMobile = window.matchMedia('(max-width: 768px)').matches;
+        if (isMobile) {
+            const primaryItems = navItems.length > 5
+                ? primaryHrefs.map(href => navItems.find(item => item.querySelector('.nav-link')?.getAttribute('href') === href)).filter(Boolean)
+                : navItems;
+            const overflowItems = navItems.filter(item => !primaryItems.includes(item));
+
+            primaryItems.forEach(item => navMenu.appendChild(item));
+            if (navSheetList) overflowItems.forEach(item => navSheetList.appendChild(item));
+            navMenu.style.setProperty('--nav-count', primaryItems.length);
+            if (navMore) navMore.hidden = !overflowItems.length;
+        } else {
+            navItems.forEach(item => navMenu.appendChild(item));
+            navMenu.style.removeProperty('--nav-count');
+            if (navMore) navMore.hidden = true;
+            closeSheet();
+        }
+
+        requestAnimationFrame(updateActivePill);
+    }
+
+    function updateActivePill() {
+        const activeLink = navMenu.querySelector('.nav-link.active');
+        if (!activeLink) {
+            navMenu.classList.remove('has-active');
+            return;
+        }
+
+        const menuRect = navMenu.getBoundingClientRect();
+        const linkRect = activeLink.getBoundingClientRect();
+        navMenu.style.setProperty('--active-left', `${linkRect.left - menuRect.left}px`);
+        navMenu.style.setProperty('--active-width', `${linkRect.width}px`);
+        navMenu.classList.add('has-active');
+    }
+
+    function activateLink(href) {
+        links.forEach(link => link.classList.toggle('active', link.getAttribute('href') === href));
+        updateActivePill();
+    }
+
+    if (navMore && navSheet) {
+        navMore.addEventListener('click', () => {
+            const isOpen = document.body.classList.toggle('nav-sheet-open');
+            navMore.setAttribute('aria-expanded', String(isOpen));
+        });
+    }
+
+    navSheetBackdrop?.addEventListener('click', closeSheet);
+    navMenu.addEventListener('click', event => {
+        const link = event.target.closest('.nav-link');
+        if (!link) return;
+        closeSheet();
+        if (link.getAttribute('href').startsWith('#')) activateLink(link.getAttribute('href'));
     });
-});
+    navSheetList?.addEventListener('click', event => {
+        if (event.target.closest('.nav-link')) closeSheet();
+    });
+
+    if (navSheet) {
+        let touchStartY = 0;
+        navSheet.addEventListener('touchstart', event => {
+            touchStartY = event.changedTouches[0].clientY;
+        }, { passive: true });
+        navSheet.addEventListener('touchend', event => {
+            if (event.changedTouches[0].clientY - touchStartY > 60) closeSheet();
+        }, { passive: true });
+    }
+
+    document.addEventListener('keydown', event => {
+        if (event.key === 'Escape') closeSheet();
+    });
+    window.addEventListener('resize', syncLayout, { passive: true });
+
+    if (sections.length && links.some(link => link.getAttribute('href').startsWith('#'))) {
+        const sectionObserver = new IntersectionObserver(entries => {
+            const visible = entries
+                .filter(entry => entry.isIntersecting)
+                .sort((first, second) => second.intersectionRatio - first.intersectionRatio)[0];
+            if (visible) activateLink(`#${visible.target.id}`);
+        }, {
+            rootMargin: '-24% 0px -64% 0px',
+            threshold: [0, 0.15, 0.35, 0.65]
+        });
+        sections.forEach(section => sectionObserver.observe(section));
+    }
+
+    syncLayout();
+}
 
 // ==================== TYPEWRITER (lebih smooth) ====================
 const typewriterText = document.querySelector('.typewriter-text');
@@ -573,7 +671,7 @@ copyButtons.forEach(button => {
         navigator.clipboard.writeText(code).then(() => {
             const originalIcon = button.innerHTML;
             button.innerHTML = '<i class="fas fa-check"></i>';
-            button.style.color = '#a78bfa'; // violet accent
+            button.style.color = 'var(--accent)';
             
             setTimeout(() => {
                 button.innerHTML = originalIcon;
@@ -667,7 +765,7 @@ function addRippleEffect() {
                 width: 0;
                 height: 0;
                 border-radius: 50%;
-                background: rgba(167, 139, 250, 0.35);
+                background: var(--accent-dim);
                 transform: translate(-50%, -50%);
                 pointer-events: none;
                 z-index: 10;
@@ -884,6 +982,7 @@ function initHeaderScroll() {
 
 // ==================== MAIN INITIALIZATION ====================
 document.addEventListener('DOMContentLoaded', () => {
+    setupNavigation();
     createImageModal();
     loadCertificates();
     
@@ -894,7 +993,6 @@ document.addEventListener('DOMContentLoaded', () => {
         yearSpan.textContent = new Date().getFullYear();
     }
     
-    createParticleBackground();
     addRippleEffect();
     initBountySection();
     initHeaderScroll();
