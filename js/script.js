@@ -10,6 +10,59 @@ const skillProgressBars = document.querySelectorAll('.skill-progress');
 const statNumbers = document.querySelectorAll('.stat-number');
 const copyButtons = document.querySelectorAll('.copy-code');
 
+// Lightweight deterrent only; this does not provide real protection.
+function initBrowserDeterrent() {
+    const preserveInteractionSelector = [
+        'input',
+        'textarea',
+        'select',
+        'button',
+        'a',
+        'summary',
+        '[role="button"]',
+        '[role="textbox"]',
+        '[contenteditable]:not([contenteditable="false"])',
+        '.code-block',
+        'pre',
+        'code',
+        '.copy-code'
+    ].join(',');
+
+    function shouldPreserveInteraction(target) {
+        return target instanceof Element && Boolean(target.closest(preserveInteractionSelector));
+    }
+
+    function selectionTouchesCode() {
+        const selection = window.getSelection();
+        if (!selection || selection.isCollapsed) return false;
+
+        return [selection.anchorNode, selection.focusNode].some(node => {
+            const element = node instanceof Element ? node : node?.parentElement;
+            return element?.closest('.code-block, pre, code, .copy-code');
+        });
+    }
+
+    document.addEventListener('contextmenu', event => {
+        if (shouldPreserveInteraction(event.target)) return;
+        if (window.getSelection()?.toString()) return;
+        event.preventDefault();
+    });
+
+    document.addEventListener('keydown', event => {
+        if (shouldPreserveInteraction(event.target) || selectionTouchesCode()) return;
+
+        const key = event.key.toLowerCase();
+        const hasControl = event.ctrlKey || event.metaKey;
+        const blockedShortcut = event.key === 'F12'
+            || (hasControl && !event.altKey && ['u', 's'].includes(key))
+            || (hasControl && event.shiftKey && ['i', 'j', 'c'].includes(key));
+
+        if (blockedShortcut) event.preventDefault();
+    });
+}
+
+initBrowserDeterrent();
+
 // Certificate Data (TIDAK DIUBAH)
 const certificates = [
     {
