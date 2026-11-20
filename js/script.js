@@ -386,6 +386,12 @@ const certificates = [
         image: 'Sertifikat/serti60.jpg'
     }
     
+, {
+        title: 'Jakarta CSIRT',
+        type: 'national',
+        image: 'Sertifikat/serti61.jpg'
+    }
+    
 ];
 
 // ==================== IMAGE MODAL ====================
