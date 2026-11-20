@@ -107,7 +107,7 @@ const certificates = [
         image: 'Sertifikat/serti8.jpg'
     },
     {
-        title: 'Diskominfotik Provinsi DKI Jakarta',
+        title: 'Jakarta CSIRT',
         type: 'national',
         image: 'Sertifikat/serti9.jpg',
         link: 'https://soc.jakarta.go.id//certificate/view?token=$2y$13$uP8RKP/oyrbbjjs./v7KHu6OeyNZNbQRSbNZ.6ohMuth8JPNM2eYq'
@@ -389,7 +389,8 @@ const certificates = [
 , {
         title: 'Jakarta CSIRT',
         type: 'national',
-        image: 'Sertifikat/serti61.jpg'
+        image: 'Sertifikat/serti61.png',
+        link: 'https://soc.jakarta.go.id//certificate/view?token=$2y$13$orJL.nHYlMRWIJZYtnA2ieNtesDOLY0Ih.GX1GTlqlbhY8nGkjKoi' 
     }
     
 ];
